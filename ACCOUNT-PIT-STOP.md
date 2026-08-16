@@ -12,7 +12,7 @@ GitHub Education verification is helpful but is not required for Day 1. Your tea
 
 ## During the 30-minute pit stop
 
-1. Open the teacher’s template link.
+1. Open the public teacher template: <https://github.com/aawhitfield/coding-club-build-lab>
 2. The team captain creates one private repository from the template.
 3. The captain invites teammates and the teacher as collaborators.
 4. Every teammate accepts the invitation using their own account.
