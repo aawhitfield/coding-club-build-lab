@@ -71,12 +71,31 @@
               <details class="mission-step" id="step-predict">
                 <summary>
                   <span class="step-number" aria-hidden="true"></span>
-                  <span class="step-title"><strong>Predict which file is responsible</strong><span>Make a guess before you inspect.</span></span>
+                  <span class="step-title"><strong>Meet the three file jobs</strong><span>Use clues before you choose.</span></span>
                 </summary>
                 <div class="step-body">
-                  <p>There are three jobs in this project. Pick the file you think controls each feature, then check your reasoning with the team.</p>
-                  <div class="prediction-group" data-prediction-group data-answer="index.html">
-                    <p>Which file controls the product title and image description?</p>
+                  <p>You are not supposed to know this yet. Read the small clues, make a first guess, and then verify it by opening the real files in the next step.</p>
+                  <div class="file-job-grid" aria-label="Three file jobs">
+                    <article class="file-job file-job-html">
+                      <div class="file-job-heading"><code>index.html</code><strong>What exists</strong></div>
+                      <pre><code>&lt;h1&gt;Rock Royale&lt;/h1&gt;
+&lt;img alt="..."&gt;</code></pre>
+                      <p>Words, images, buttons, and structure.</p>
+                    </article>
+                    <article class="file-job file-job-css">
+                      <div class="file-job-heading"><code>style.css</code><strong>How it looks</strong></div>
+                      <pre><code>--product: #64748b;
+--paper: #fff7ed;</code></pre>
+                      <p>Colors, spacing, layout, and appearance.</p>
+                    </article>
+                    <article class="file-job file-job-js">
+                      <div class="file-job-heading"><code>script.js</code><strong>What it does</strong></div>
+                      <pre><code>onClick("button", ...)</code></pre>
+                      <p>Clicks, decisions, and visible responses.</p>
+                    </article>
+                  </div>
+                  <div class="prediction-group" data-prediction-group data-answer="index.html" data-hint="Look for the clue with HTML tags such as &lt;h1&gt; and &lt;img&gt;.">
+                    <p>Which file holds the product title and image description?</p>
                     <div class="prediction-options">
                       <button class="prediction-choice" type="button" data-prediction-choice="index.html">index.html</button>
                       <button class="prediction-choice" type="button" data-prediction-choice="style.css">style.css</button>
@@ -84,8 +103,8 @@
                     </div>
                     <p class="prediction-feedback" data-prediction-feedback role="status"></p>
                   </div>
-                  <div class="prediction-group" data-prediction-group data-answer="style.css">
-                    <p>Which file controls the colors and layout?</p>
+                  <div class="prediction-group" data-prediction-group data-answer="style.css" data-hint="Look for the clue with color values and CSS variables such as --product.">
+                    <p>Which file holds the colors and layout rules?</p>
                     <div class="prediction-options">
                       <button class="prediction-choice" type="button" data-prediction-choice="index.html">index.html</button>
                       <button class="prediction-choice" type="button" data-prediction-choice="style.css">style.css</button>
@@ -93,6 +112,16 @@
                     </div>
                     <p class="prediction-feedback" data-prediction-feedback role="status"></p>
                   </div>
+                  <div class="prediction-group" data-prediction-group data-answer="script.js" data-hint="Look for the clue with onClick and a response that runs after a user action.">
+                    <p>Which file contains the response to clicking <strong>Reveal a secret</strong>?</p>
+                    <div class="prediction-options">
+                      <button class="prediction-choice" type="button" data-prediction-choice="index.html">index.html</button>
+                      <button class="prediction-choice" type="button" data-prediction-choice="style.css">style.css</button>
+                      <button class="prediction-choice" type="button" data-prediction-choice="script.js">script.js</button>
+                    </div>
+                    <p class="prediction-feedback" data-prediction-feedback role="status"></p>
+                  </div>
+                  <p class="small-note"><strong>Important:</strong> a guess is not a grade. You will prove it by opening the files and changing one line.</p>
                   <label class="mission-check"><input type="checkbox" data-progress="predict"> I can explain the different jobs of HTML, CSS, and JavaScript.</label>
                 </div>
               </details>

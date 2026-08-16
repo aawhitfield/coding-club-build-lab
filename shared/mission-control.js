@@ -190,7 +190,7 @@
       group.querySelectorAll("[data-prediction-choice]").forEach((choice) => choice.classList.remove("is-correct", "is-wrong"));
       button.classList.add(correct ? "is-correct" : "is-wrong");
       const feedback = group.querySelector("[data-prediction-feedback]");
-      if (feedback) feedback.textContent = correct ? "Correct. Now explain why." : "Not quite. Look at the file names and try again.";
+      if (feedback) feedback.textContent = correct ? "Correct. Use the clue to explain why." : `Not quite. ${group.dataset.hint || "Read the clues and try again."}`;
     });
   });
   iframe?.addEventListener("load", () => setStatus("Preview ready · save code to see it update"));
