@@ -1,0 +1,1 @@
+onClick("recommend-button", function () { var choice = valueOf("choice-input"); setText("result-message", choice === "focus" ? "Try one ten-minute task." : "Take a short movement break."); show("result-message"); });

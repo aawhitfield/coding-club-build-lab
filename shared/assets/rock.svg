@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">A dramatically lit ordinary rock</title>
+  <desc id="desc">A gray rock on a warm yellow background.</desc>
+  <rect width="640" height="480" rx="36" fill="#fef3c7"/>
+  <ellipse cx="320" cy="365" rx="210" ry="34" fill="#d6b56c" opacity=".45"/>
+  <path d="M155 350c12-91 73-180 166-190 81-9 163 64 165 150 2 80-72 107-166 107-99 0-177-17-165-67Z" fill="#64748b"/>
+  <path d="M230 207c45-36 105-47 151-20l-40 51-93 20Z" fill="#94a3b8" opacity=".8"/>
+  <circle cx="270" cy="286" r="10" fill="#334155"/>
+  <circle cx="390" cy="301" r="8" fill="#334155"/>
+</svg>

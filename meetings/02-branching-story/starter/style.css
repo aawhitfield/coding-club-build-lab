@@ -1,0 +1,8 @@
+body { margin: 0; background: #eff6ff; color: #172554; font-family: system-ui, sans-serif; }
+.story-shell { width: min(760px, calc(100% - 32px)); margin: auto; padding: 52px 0; }
+.story-card { border: 4px solid #2563eb; border-radius: 26px; background: white; padding: clamp(22px, 5vw, 50px); box-shadow: 10px 10px 0 #93c5fd; }
+.story-card h1 { margin-top: 0; font-size: clamp(2.5rem, 9vw, 5.5rem); line-height: .95; letter-spacing: -.07em; }
+.choices { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.choice { display: inline-block; border-radius: 999px; background: #2563eb; color: white; padding: 12px 18px; font-weight: 800; text-decoration: none; }
+.choice.secondary { background: #dbeafe; color: #172554; }
+.hint { color: #475569; line-height: 1.55; }

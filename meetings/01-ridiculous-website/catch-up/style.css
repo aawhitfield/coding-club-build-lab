@@ -1,0 +1,16 @@
+:root { --product: #7c3aed; --paper: #f5f3ff; --ink: #312e81; --button: #db2777; }
+body { margin: 0; min-height: 100vh; background: var(--paper); color: var(--ink); font-family: system-ui, sans-serif; }
+.demo-shell { width: min(760px, calc(100% - 32px)); margin: auto; padding: 52px 0; }
+.tag { display: inline-block; border-radius: 999px; background: #fbcfe8; padding: 8px 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+.product-card { border: 5px solid var(--product); border-radius: 30px; background: white; padding: clamp(22px, 5vw, 58px); box-shadow: 12px 12px 0 #c4b5fd; }
+h1 { margin: 0 0 12px; font-size: clamp(2.8rem, 10vw, 6.5rem); line-height: .9; letter-spacing: -.08em; }
+.lede { max-width: 560px; font-size: 1.25rem; line-height: 1.55; }
+img { display: block; width: min(100%, 420px); margin: 28px auto; border-radius: 20px; }
+.price-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+.price { margin: 0; font-size: 2rem; font-weight: 900; }
+.small-note { color: #64748b; }
+.button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+button { border: 0; border-radius: 999px; background: var(--button); color: white; padding: 12px 18px; font-weight: 800; cursor: pointer; }
+button.secondary { background: #e2e8f0; color: var(--ink); }
+.message { margin-top: 20px; border-radius: 14px; background: #ecfdf5; color: #065f46; padding: 14px 16px; font-weight: 700; }
+[hidden] { display: none; }

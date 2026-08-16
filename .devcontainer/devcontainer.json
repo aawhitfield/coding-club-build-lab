@@ -1,0 +1,28 @@
+{
+  "name": "Coding Club Build Lab",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Coding Club preview",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postStartCommand": "node .devcontainer/serve.mjs >/tmp/coding-club-preview.log 2>&1 &",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "editor.formatOnSave": false,
+        "files.trimTrailingWhitespace": true,
+        "workbench.startupEditor": "readme"
+      }
+    }
+  }
+}
