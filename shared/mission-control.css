@@ -364,8 +364,16 @@
   font: .86rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
+.prediction-choice:not(.is-correct):not(.is-wrong):hover {
+  border-color: #60a5fa;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
 .prediction-choice.is-correct { border-color: #34d399; background: #ecfdf5; color: #065f46; }
 .prediction-choice.is-wrong { border-color: #fda4af; background: #fff1f2; color: #9f1239; }
+.prediction-choice.is-correct:hover { border-color: #10b981; background: #d1fae5; color: #065f46; }
+.prediction-choice.is-wrong:hover { border-color: #fb7185; background: #ffe4e6; color: #9f1239; }
 
 .prediction-feedback {
   min-height: 1.2em;
