@@ -614,6 +614,14 @@ kbd {
 
 .finish-card { border-left: 6px solid var(--accent); }
 
+.finish-card > .mission-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  text-decoration: none;
+}
+
 .finish-card .commit-line {
   display: inline-block;
   margin: 12px 0 4px;
