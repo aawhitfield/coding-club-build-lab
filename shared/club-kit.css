@@ -33,6 +33,9 @@ h2 { margin-top: 0; line-height: 1.1; }
 .link-card { display: block; color: var(--ink); text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
 .link-card:hover { border-color: var(--brand); transform: translateY(-3px); }
 .link-card p, .callout p { color: var(--muted); line-height: 1.5; }
+.upcoming-card { border-style: dashed; background: #fbfcfe; }
+.upcoming-card p { color: var(--muted); line-height: 1.5; }
+.card-status { display: block; margin-top: 14px; color: var(--brand-dark); font-size: .76rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .card-number { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-bottom: 22px; border-radius: 50%; background: #dbeafe; color: var(--brand-dark); font-weight: 800; }
 .callout { border-left: 6px solid var(--accent); }
 .demo-shell { width: min(860px, calc(100% - 32px)); margin: 0 auto; padding: 40px 0 64px; }

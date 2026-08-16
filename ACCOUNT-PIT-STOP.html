@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Day Zero setup guide for Coding Club Build Lab.">
+    <title>Day Zero · Account Pit Stop</title>
+    <link rel="stylesheet" href="shared/club-kit.css">
+    <style>
+      .setup-shell { width: min(980px, calc(100% - 32px)); margin: 0 auto; padding: 42px 0 72px; }
+      .setup-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+      .setup-header h1 { margin-bottom: 12px; }
+      .setup-header .lede { margin-bottom: 0; }
+      .setup-badge { flex: 0 0 auto; border: 1px solid #fbbf24; border-radius: 18px; background: #fffbeb; color: #92400e; padding: 15px 17px; font-size: .85rem; font-weight: 800; line-height: 1.35; text-align: center; }
+      .setup-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .setup-card { border: 1px solid var(--line); border-radius: 20px; background: var(--panel); box-shadow: var(--shadow); padding: 22px; }
+      .setup-card h2 { margin-bottom: 9px; }
+      .setup-card p, .setup-card li { color: var(--muted); line-height: 1.52; }
+      .setup-card ol, .setup-card ul { padding-left: 22px; }
+      .setup-card li + li { margin-top: 8px; }
+      .setup-card.callout { grid-column: 1 / -1; }
+      .setup-card a { font-weight: 750; }
+      .setup-checklist { display: grid; gap: 10px; margin-top: 16px; }
+      .setup-check { display: flex; align-items: flex-start; gap: 10px; color: var(--ink); line-height: 1.4; }
+      .setup-check input { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 2px; accent-color: var(--success); }
+      .setup-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+      .setup-actions .button { text-decoration: none; }
+      .status-strip { margin-top: 18px; border-radius: 13px; background: #f8fafc; padding: 13px 15px; color: var(--muted); font-size: .9rem; line-height: 1.45; }
+      @media (max-width: 680px) { .setup-shell { width: min(100% - 24px, 980px); padding-top: 28px; } .setup-header { display: block; } .setup-badge { display: inline-block; margin-top: 18px; } .setup-grid { grid-template-columns: 1fr; } .setup-card.callout { grid-column: auto; } }
+    </style>
+  </head>
+  <body>
+    <main class="setup-shell">
+      <p class="eyebrow">Coding Club · Build Lab</p>
+      <header class="setup-header">
+        <div>
+          <h1>Day Zero: Account Pit Stop</h1>
+          <p class="lede">A supervised 30-minute rehearsal. When this is finished, your team can open the lab, change a line, see the result, and leave a verified commit behind.</p>
+        </div>
+        <div class="setup-badge">30 minutes<br>team launch</div>
+      </header>
+
+      <section class="setup-grid" aria-label="Day Zero setup steps">
+        <article class="setup-card callout">
+          <h2>Before we begin</h2>
+          <p>Create or use an account only if your teacher and district have approved it. Use a non-identifying username, verify your email, and keep recovery information private. GitHub Education verification is helpful, but it is not required for the first build.</p>
+          <div class="status-strip"><strong>No account yet?</strong> Join a working team as navigator, designer/tester, or documentarian. Never share credentials or use someone else’s account.</div>
+        </article>
+
+        <article class="setup-card">
+          <h2>1 · Open the starting point</h2>
+          <ol>
+            <li>Open the public <a href="https://github.com/aawhitfield/coding-club-build-lab" target="_blank" rel="noreferrer">Coding Club Build Lab template</a>.</li>
+            <li>Your team captain chooses <strong>Use this template</strong> and creates one <strong>private</strong> repository.</li>
+            <li>The captain invites teammates and the teacher. Everyone accepts with their own account.</li>
+          </ol>
+        </article>
+
+        <article class="setup-card">
+          <h2>2 · Open the lab</h2>
+          <ol>
+            <li>Open the team repository and choose <strong>Code → Codespaces → Create codespace on main</strong>.</li>
+            <li>Wait for the launcher to appear. If the preview is not visible, open the <strong>Ports</strong> panel and open port <strong>8000</strong>.</li>
+            <li>Keep two tabs open: the Codespace editor for code and Mission Control for directions.</li>
+          </ol>
+        </article>
+
+        <article class="setup-card">
+          <h2>3 · Make the first signal</h2>
+          <ol>
+            <li>Open Copilot Chat if it is available and ask: <code>Which file controls the product title? Do not edit anything. Give us one next step.</code></li>
+            <li>In the editor, open <code>meetings/01-ridiculous-website/project/index.html</code>.</li>
+            <li>Change the heading, save, and watch the preview. AI is optional; a peer or teacher can answer the same question.</li>
+          </ol>
+        </article>
+
+        <article class="setup-card">
+          <h2>4 · Prove the connection</h2>
+          <ol>
+            <li>Open <strong>Source Control</strong>, write <code>Day 0: account setup test</code>, and commit.</li>
+            <li>Choose <strong>Sync Changes</strong>, then verify the commit appears on GitHub.</li>
+            <li>Stop the Codespace when your teacher says the team is ready.</li>
+          </ol>
+        </article>
+      </section>
+
+      <section class="setup-card" style="margin-top: 16px;" aria-labelledby="green-title">
+        <h2 id="green-title">Green means ready for Day 1</h2>
+        <div class="setup-checklist">
+          <label class="setup-check"><input type="checkbox"> Our team has a private repository.</label>
+          <label class="setup-check"><input type="checkbox"> The captain and backup driver can open it.</label>
+          <label class="setup-check"><input type="checkbox"> The preview shows a working project.</label>
+          <label class="setup-check"><input type="checkbox"> We changed one heading and saw the result.</label>
+          <label class="setup-check"><input type="checkbox"> We verified the Day Zero commit on GitHub.</label>
+        </div>
+        <p class="status-strip"><strong>Yellow is still participation.</strong> If an invitation or Copilot is unresolved, take a navigator, designer/tester, or documentarian role while your teacher repairs access. A Codespaces or preview failure is the priority to fix before Day 1.</p>
+        <div class="setup-actions">
+          <a class="button" href="meetings/01-ridiculous-website/mission.html">Open Day 1 Mission Control</a>
+          <a class="button secondary" href="index.html">Back to launcher</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

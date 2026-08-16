@@ -4,7 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const port = 8000;
+const port = Number(process.env.PORT || 8000);
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -20,18 +20,43 @@ const mime = {
 };
 
 function safePath(urlPath) {
-  const decoded = decodeURIComponent(urlPath.split("?")[0]);
-  const requested = path.resolve(root, `.${decoded === "/" ? "/index.html" : decoded}`);
+  let decoded;
+  try {
+    decoded = decodeURIComponent(urlPath || "/");
+  } catch {
+    return null;
+  }
+  const normalized = decoded.startsWith("/") ? decoded : `/${decoded}`;
+  const requested = path.resolve(root, `.${normalized === "/" ? "/index.html" : normalized}`);
   return requested === root || requested.startsWith(`${root}${path.sep}`) ? requested : null;
 }
 
-const server = http.createServer((request, response) => {
-  const filePath = safePath(request.url || "/");
+function latestModified(filePath) {
+  const stats = fs.statSync(filePath);
+  if (!stats.isDirectory()) return stats.mtimeMs;
+  return fs.readdirSync(filePath, { withFileTypes: true }).reduce((latest, entry) => {
+    if (entry.name === ".git" || entry.name === "node_modules") return latest;
+    return Math.max(latest, latestModified(path.join(filePath, entry.name)));
+  }, stats.mtimeMs);
+}
+
+function sendJson(response, status, payload) {
+  const body = JSON.stringify(payload);
+  response.writeHead(status, {
+    "Cache-Control": "no-store",
+    "Content-Type": "application/json; charset=utf-8"
+  });
+  response.end(body);
+}
+
+function serveFile(request, response) {
+  const filePath = safePath(request.url?.split("?")[0]);
   if (!filePath) {
     response.writeHead(403);
     response.end("Forbidden");
     return;
   }
+
   fs.stat(filePath, (statError, stats) => {
     if (statError) {
       response.writeHead(404);
@@ -45,12 +70,45 @@ const server = http.createServer((request, response) => {
         response.end("Not found");
         return;
       }
-      response.writeHead(200, { "Content-Type": mime[path.extname(target).toLowerCase()] || "application/octet-stream" });
+      response.writeHead(200, {
+        "Cache-Control": "no-store",
+        "Content-Type": mime[path.extname(target).toLowerCase()] || "application/octet-stream"
+      });
       response.end(data);
     });
   });
+}
+
+const server = http.createServer((request, response) => {
+  const requestUrl = new URL(request.url || "/", "http://127.0.0.1");
+
+  if (requestUrl.pathname === "/__health") {
+    sendJson(response, 200, { ok: true, port });
+    return;
+  }
+
+  if (requestUrl.pathname === "/__version") {
+    const relativePath = requestUrl.searchParams.get("path");
+    const target = relativePath ? safePath(relativePath) : null;
+    if (!target) {
+      sendJson(response, 400, { ok: false, error: "A repository-relative path is required." });
+      return;
+    }
+    try {
+      sendJson(response, 200, {
+        ok: true,
+        path: relativePath,
+        version: Math.floor(latestModified(target) * 1000)
+      });
+    } catch {
+      sendJson(response, 404, { ok: false, error: "Path not found." });
+    }
+    return;
+  }
+
+  serveFile(request, response);
 });
 
 server.listen(port, "0.0.0.0", () => {
-  console.log(`Coding Club preview available on port ${port}`);
+  console.log(`Coding Club preview available at http://127.0.0.1:${port}`);
 });

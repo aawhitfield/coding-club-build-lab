@@ -11,7 +11,8 @@
       "onAutoForward": "openPreview"
     }
   },
-  "postStartCommand": "node .devcontainer/serve.mjs >/tmp/coding-club-preview.log 2>&1 &",
+  "postCreateCommand": "node .devcontainer/start-preview.mjs",
+  "postStartCommand": "node .devcontainer/start-preview.mjs",
   "customizations": {
     "vscode": {
       "extensions": [

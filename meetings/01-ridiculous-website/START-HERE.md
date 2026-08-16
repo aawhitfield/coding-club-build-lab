@@ -1,5 +1,7 @@
 # Meeting 1 · The Ridiculous Website
 
+> **Browser-first route:** open [`mission.html`](mission.html) in the preview. It puts these directions beside a live project preview and shows the exact file path for every edit. Keep this Markdown page for printing or when Mission Control is unavailable.
+
 ## Today’s promise
 
 You will leave with a working website that makes an ordinary idea feel completely unreasonable.

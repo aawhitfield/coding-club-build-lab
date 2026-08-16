@@ -10,13 +10,13 @@ This repository is a browser-first, eight-meeting coding-club sequence for stude
 
 ## Open the club launcher
 
-In GitHub Codespaces, the preview server opens on port 8000. If it does not open automatically, use the **Ports** panel and open port 8000 in the browser.
+In GitHub Codespaces, the preview server starts on port 8000 during both Codespace creation and restart. If it does not open automatically, use the **Ports** panel and open port 8000 in the browser. The launcher and Mission Control use that same preview.
 
-The launcher at [`index.html`](index.html) links to each meeting's student directions and project preview.
+The launcher at [`index.html`](index.html) opens the rendered Day Zero setup guide and the Meeting 1 Mission Control pilot. Mission Control keeps directions in one tab and the live project preview beside them; the Codespace editor remains the place where students edit code. Later meetings retain printable `START-HERE.md` files while their Mission Control pages are built.
 
 The final presentation tools are [`showcase/showcase-card.html`](showcase/showcase-card.html) and [`showcase/demo-checklist.md`](showcase/demo-checklist.md).
 
-Complete the [`Account Pit Stop`](ACCOUNT-PIT-STOP.md) with your teacher before creating a team repository.
+Complete the [`Account Pit Stop`](ACCOUNT-PIT-STOP.html) with your teacher before creating a team repository. The printable fallback is [`ACCOUNT-PIT-STOP.md`](ACCOUNT-PIT-STOP.md).
 
 ## Team workflow
 
@@ -49,6 +49,7 @@ From the repository root:
 
 ```bash
 node scripts/validate-build-lab.mjs
+node scripts/test-preview-server.mjs
 ```
 
-This checks JavaScript syntax, local HTML references, required core files for all eight meetings, and the dimensions of the Sprig starter bitmaps. It does not replace the managed-Chromebook/Sprig rehearsal in the teacher repository.
+The first command checks JavaScript syntax, local HTML references, the Meeting 1 Mission Control configuration, required core files for all eight meetings, and the dimensions of the Sprig starter bitmaps. The second command exercises preview health, version polling, missing-file handling, and traversal rejection. These checks do not replace the managed-Chromebook/Sprig rehearsal in the teacher repository.

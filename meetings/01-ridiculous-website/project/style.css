@@ -1,4 +1,11 @@
-:root { --product: #64748b; --paper: #fff7ed; --ink: #1f2937; --button: #2563eb; }
+:root {
+  /* BUILD LAB EDIT 3: Change at least three values to remix the theme. */
+  --product: #64748b; /* border and headline color */
+  --paper: #fff7ed; /* page background */
+  --ink: #1f2937; /* body text */
+  --button: #2563eb; /* primary button */
+}
+
 body { margin: 0; min-height: 100vh; background: var(--paper); color: var(--ink); font-family: Georgia, serif; }
 .demo-shell { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 52px 0; }
 .tag { display: inline-block; border-radius: 999px; background: #fde68a; padding: 8px 12px; font: 800 .8rem system-ui, sans-serif; text-transform: uppercase; letter-spacing: .08em; }
