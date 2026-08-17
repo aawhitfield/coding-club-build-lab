@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meeting 3 Mission Control: connect a user action to a visible secret ending.">
+  <title>Mission 03 · Trigger the Secret Ending</title>
+  <link rel="stylesheet" href="../../shared/club-kit.css">
+  <link rel="stylesheet" href="../../shared/mission-control.css">
+</head>
+<body class="mission-body">
+  <header class="mission-topbar">
+    <a class="mission-brand" href="../../index.html">Coding Club · Build Lab</a><a href="../../index.html">Back to mission launcher</a>
+  </header>
+  <main class="mission-shell">
+    <section class="mission-intro" aria-labelledby="mission-title">
+      <div>
+        <p class="mission-kicker">Mission 03 · Create for an audience</p>
+        <h1 id="mission-title">Trigger the Secret Ending</h1>
+        <p class="lede">Make a click change what happens next. You will connect an HTML ID to a JavaScript event, then use the pattern to create a small surprise.</p>
+      </div>
+      <div class="mission-contract" aria-label="Meeting promise">
+        <div>
+          <strong>60 min</strong><span>One visible response</span>
+        </div>
+        <div>
+          <strong>2 IDs</strong><span>Match the connection</span>
+        </div>
+        <div>
+          <strong>1 bug</strong><span>Repair the break</span>
+        </div>
+      </div>
+    </section>
+    <div class="mission-layout">
+      <section class="guide-column" aria-label="Mission directions">
+        <section class="track-card" aria-labelledby="track-title">
+          <p class="panel-kicker">Choose your entry point</p>
+          <h2 id="track-title">Were you here last time?</h2>
+          <p>Continue with your team story if it is available. If you missed the previous meeting, the catch-up project already has a working event.</p>
+          <div class="track-options" role="group" aria-label="Project entry point">
+            <button class="track-button" type="button" data-track-target="continue" aria-pressed="true">Continue my story</button><button class="track-button" type="button" data-track-target="catchUp" aria-pressed="false">I need a fresh start</button>
+          </div>
+          <p class="small-note">The event pattern is the same on either route. Your story and words can be completely different.</p>
+          <nav class="mission-jump" aria-label="Jump to a mission step">
+            <a href="#step-play">Play</a><a href="#step-find">Find</a><a href="#step-change">Change</a><a href="#step-build">Build</a><a href="#step-broadcast">Broadcast</a>
+          </nav>
+          <p class="mission-status" data-mission-status="" role="status" aria-live="polite"></p>
+        </section>
+        <div class="learning-targets">
+          <h3>By the end, I can…</h3>
+          <ul>
+            <li>Trace action → event handler → visible response.</li>
+            <li>Match an HTML ID with the JavaScript ID that listens for it.</li>
+            <li>Break and repair one event connection.</li>
+          </ul>
+        </div>
+        <div class="essential-question"><strong>Essential question</strong><p>How can one user action make a page respond in a way we can explain?</p></div>
+        <ol class="mission-step-list">
+          <li>
+            <details class="mission-step" id="step-play" open>
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Trigger the finished secret</strong><span>Notice the action and the result.</span></span>
+              </summary>
+              <div class="step-body">
+                <p data-track-only="continue"><strong>Continue track setup:</strong> open the Change step first, remove the marked <code>hidden</code> attribute from the event lab in the Meeting 2 project, save, and return here. That turns your existing story into today’s working starting point.</p>
+                <p>Use the preview. Click the main button, notice what disappears, and reset it. Then say what the user did and what the page changed.</p>
+                <div class="do-see-grid">
+                  <div class="do-see">
+                    <strong>Do</strong><span>Click the secret button, then click Reset.</span>
+                  </div>
+                  <div class="do-see">
+                    <strong>You should see</strong><span>A message appears, the ordinary message hides, and Reset restores the start.</span>
+                  </div>
+                </div>
+                <div class="question-card">
+                  <h3>Say it aloud</h3>
+                  <p>What is the user action? What visible result proves that code responded? Point to one change in the preview.</p>
+                </div><label class="mission-check"><input type="checkbox" data-progress="play"> I can describe an action and the visible response it causes.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-find">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Find the connection</strong><span>Read the two matching IDs before predicting.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Open the edit file shown below. The HTML gives an element an ID. JavaScript listens for that exact ID.</p>
+                <div class="file-job-grid">
+                  <article class="file-job">
+                    <div class="file-job-heading">
+                      <code>index.html</code><strong>element</strong>
+                    </div>
+                    <pre><code>id="secret-button" · id="secret-panel"</code></pre>
+                    <p>The page contains the button and the hidden panel.</p>
+                  </article>
+                  <article class="file-job file-job-css">
+                    <div class="file-job-heading">
+                      <code>script.js</code><strong>event</strong>
+                    </div>
+                    <pre><code>onClick("secret-button", ...)</code></pre>
+                    <p>The handler starts when the button is clicked.</p>
+                  </article>
+                  <article class="file-job file-job-js">
+                    <div class="file-job-heading">
+                      <code>club-kit.js</code><strong>helper</strong>
+                    </div>
+                    <pre><code>show("secret-panel")</code></pre>
+                    <p>The helper changes what the visitor can see.</p>
+                  </article>
+                </div>
+                <div class="prediction-group" data-prediction-group="" data-answer="secret-button" data-hint="Compare the exact ID inside the HTML button with the first argument in onClick." data-success="Correct. The strings match, so the click has a listener.">
+                  <p>Which ID must match the first argument of <code>onClick</code>?</p>
+                  <div class="prediction-options">
+                    <button class="prediction-choice" type="button" data-prediction-choice="secret-panel">secret-panel</button><button class="prediction-choice" type="button" data-prediction-choice="secret-button">secret-button</button><button class="prediction-choice" type="button" data-prediction-choice="reset-button">reset-button</button>
+                  </div>
+                  <p class="prediction-feedback" data-prediction-feedback="" role="status"></p>
+                </div>
+                <div class="file-tree" data-file-tree="" aria-label="Explorer path">
+                  meetings/02-branching-story/project/index.html
+                </div>
+                <div class="path-row"><code data-edit-path>meetings/02-branching-story/project/index.html</code><button class="copy-button" type="button" data-copy-path="meetings/02-branching-story/project/index.html">Copy path</button></div>
+                <p>For the continuation track, open the Meeting 2 project path shown above. For catch-up, switch tracks and use the displayed catch-up path.</p><label class="mission-check"><input type="checkbox" data-progress="find"> I can identify the button ID, panel ID, and event file.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-change">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Make one event change</strong><span>Change one thing, save, and test it.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>For the continuation track, remove the <code>hidden</code> attribute from the Meeting 2 event lab. For catch-up, the event is already visible. Then change the message and one ID pair. Keep the exact spelling and punctuation in both files.</p>
+                <div class="edit-recipe">
+                  <article class="edit-card">
+                    <h3>EDIT 1 · Secret message</h3>
+                    <p>In <code>index.html</code>, replace the text inside <code>secret-panel</code>.</p>
+                    <pre>Secret ending: the pigeon knows your locker combination.</pre>
+                  </article>
+                  <article class="edit-card">
+                    <h3>EDIT 2 · Matching IDs</h3>
+                    <p>Change the button ID and the first <code>onClick</code> argument to the same new value.</p>
+                    <pre>id="reveal-button" · onClick("reveal-button", function () { ... });</pre>
+                  </article>
+                  <article class="edit-card">
+                    <h3>EDIT 3 · Test the reset</h3>
+                    <p>Click the new button, then Reset. If one state remains visible, compare the IDs in both helpers.</p>
+                    <pre>show("secret-panel"); hide("normal-panel");</pre>
+                  </article>
+                </div><label class="mission-check"><input type="checkbox" data-progress="baseline" data-baseline-required=""> My button changes the page and Reset restores it.</label><label class="mission-check"><input type="checkbox" data-progress="ids" data-baseline-required=""> I can point to both matching ID strings.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-build">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Invent a secret</strong><span>Choose a tiny surprise after the baseline works.</span></span>
+              </summary>
+              <div class="step-body">
+                <p data-baseline-state="">Complete the guided baseline first</p>
+                <div class="challenge-grid">
+                  <article class="challenge-card">
+                    <strong>Reveal a character</strong>
+                    <p>Show who has been secretly helping the player.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Reveal a consequence</strong>
+                    <p>Change the ending after a brave choice.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Boss: remember a choice</strong>
+                    <p>Use a variable or conditional so one earlier decision changes the ending.</p>
+                  </article>
+                </div>
+                <p class="small-note">Builder rule: copy a working event block, change one ID pair, and test before adding another.</p><label class="mission-check"><input type="checkbox" data-progress="build"> Our secret is original, visible, and still has a working reset.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-broadcast">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Debug and explain</strong><span>Make the event chain understandable.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Ask another person to click without coaching. Commit with <code>Meeting 3: secret ending</code>, sync, verify the commit, and stop the Codespace.</p>
+                <p><strong>Demo sentence:</strong> “When the user clicks ____, <code>onClick</code> runs and changes ____ because the IDs ____ and ____ match.”</p>
+                <div class="stuck-card">
+                  <h3>Stuck ladder</h3>
+                  <ol>
+                    <li>Run the event and describe what did not change.</li>
+                    <li>Compare the HTML ID with the JavaScript ID character by character.</li>
+                    <li>Check the browser console for the missing-ID message.</li>
+                    <li>Restore only the affected file, then ask a peer, teacher, or optional AI adviser.</li>
+                  </ol>
+                </div><label class="mission-check"><input type="checkbox" data-progress="broadcast"> I can explain the event chain and the bug or test that helped us.</label>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </section>
+      <aside class="preview-dock" aria-label="Live project preview">
+        <section class="preview-panel">
+          <div class="preview-head">
+            <div>
+              <p class="preview-kicker">Live preview</p><strong data-preview-label="">Continuing story</strong>
+            </div><span class="preview-status" data-preview-status="" role="status" aria-live="polite">Loading preview…</span>
+          </div>
+          <div class="preview-frame">
+            <iframe id="project-preview" title="Live preview of the Meeting 3 event project" name="project-preview"></iframe>
+          </div>
+          <div class="external-preview" data-external-preview="" hidden="">
+            <div>
+              <h3>Play the external tool</h3>
+              <p>Open the external editor, run after each small change, and save a code backup in your repository.</p><a class="mission-button primary" data-external-link="" target="_blank" rel="noreferrer" href="#">Open external editor</a><br>
+            </div>
+          </div>
+          <div class="preview-controls">
+            <button class="mission-button" type="button" data-reload-preview="">Reload Preview</button><a class="mission-button" data-full-preview="" target="_blank" rel="noreferrer" href="../02-branching-story/project/index.html">Open Full Preview</a>
+          </div>
+          <p class="preview-note"><strong>Two-tab rhythm:</strong> save in the Codespace tab, then watch this preview update.</p>
+        </section>
+        <div class="progress-panel" aria-label="Mission progress">
+          <div class="progress-heading">
+            <strong>Mission progress</strong><span data-progress-label="">0 checkpoints complete</span>
+          </div>
+          <div class="progress-track" aria-hidden="true"></div>
+        </div>
+      </aside>
+    </div>
+    <section class="roles-card" aria-labelledby="roles-title">
+      <p class="panel-kicker">Build together</p>
+      <h2 id="roles-title">Events need more than one pair of eyes.</h2>
+      <p>Rotate who drives, traces IDs, tests states, and records the explanation.</p>
+      <div class="role-grid">
+        <article class="role-card">
+          <strong>Driver</strong>
+          <p>Makes one agreed edit at a time.</p>
+        </article>
+        <article class="role-card">
+          <strong>Navigator</strong>
+          <p>Reads the event chain aloud.</p>
+        </article>
+        <article class="role-card">
+          <strong>Designer / tester</strong>
+          <p>Clicks every state and notices what remains on screen.</p>
+        </article>
+        <article class="role-card">
+          <strong>Documentarian</strong>
+          <p>Records the test and the contribution.</p>
+        </article>
+      </div>
+    </section>
+    <section class="finish-card" aria-labelledby="finish-title">
+      <p class="panel-kicker">Ready to leave?</p>
+      <h2 id="finish-title">A click that means something is the finish line.</h2>
+      <p>Every student can point to one connection between an action and a result.</p><a class="mission-button primary" href="../../index.html">Return to mission launcher</a>
+    </section>
+  </main>
+  <script id="mission-config" type="application/json">
+  {"id":"03-events-and-endings","mode":"embedded","defaultTrack":"continue","tracks":{"continue":{"label":"Continuing story","pathPrefix":"meetings/02-branching-story/","preview":"../02-branching-story/project/index.html","watchPath":"project","editFiles":["meetings/02-branching-story/project/index.html","meetings/02-branching-story/project/script.js","meetings/02-branching-story/project/style.css"]},"catchUp":{"label":"Catch-up event lab","pathPrefix":"meetings/03-events-and-endings/","preview":"catch-up/index.html","watchPath":"catch-up","editFiles":["catch-up/index.html","catch-up/script.js","catch-up/style.css"]}}}
+  </script>
+  <script src="../../shared/mission-control.js"></script>
+</body>
+</html>

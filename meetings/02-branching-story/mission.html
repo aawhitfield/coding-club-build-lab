@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meeting 2 Mission Control: build a branching story another team can play.">
+  <title>Mission 02 · Choose Your Own Disaster</title>
+  <link rel="stylesheet" href="../../shared/club-kit.css">
+  <link rel="stylesheet" href="../../shared/mission-control.css">
+</head>
+<body class="mission-body">
+  <header class="mission-topbar">
+    <a class="mission-brand" href="../../index.html">Coding Club · Build Lab</a><a href="../../index.html">Back to mission launcher</a>
+  </header>
+  <main class="mission-shell">
+    <section class="mission-intro" aria-labelledby="mission-title">
+      <div>
+        <p class="mission-kicker">Mission 02 · Create for an audience</p>
+        <h1 id="mission-title">Choose Your Own Disaster</h1>
+        <p class="lede">Build a branching story that another team can play without you standing beside it. Today, links become choices and choices become consequences.</p>
+      </div>
+      <div class="mission-contract" aria-label="Meeting promise">
+        <div>
+          <strong>60 min</strong><span>One playable story</span>
+        </div>
+        <div>
+          <strong>3 scenes</strong><span>Opening + branches</span>
+        </div>
+        <div>
+          <strong>1 tester</strong><span>Another team plays</span>
+        </div>
+      </div>
+    </section>
+    <div class="mission-layout">
+      <section class="guide-column" aria-label="Mission directions">
+        <section class="track-card" aria-labelledby="track-title">
+          <p class="panel-kicker">Choose your entry point</p>
+          <h2 id="track-title">Were you here last time?</h2>
+          <p>Use the team project for the main route. Use the catch-up story if you are new today. Both routes reach a playable story.</p>
+          <div class="track-options" role="group" aria-label="Project entry point">
+            <button class="track-button" type="button" data-track-target="project" aria-pressed="true">I’m with my team</button><button class="track-button" type="button" data-track-target="catchUp" aria-pressed="false">I need a fresh start</button>
+          </div>
+          <p class="small-note">Nothing is locked. Skip ahead, reopen a step, or ask your navigator to read it aloud.</p>
+          <nav class="mission-jump" aria-label="Jump to a mission step">
+            <a href="#step-play">Play</a><a href="#step-find">Find</a><a href="#step-build">Build</a><a href="#step-test">Test</a><a href="#step-broadcast">Broadcast</a>
+          </nav>
+          <p class="mission-status" data-mission-status="" role="status" aria-live="polite"></p>
+        </section>
+        <div class="learning-targets">
+          <h3>By the end, I can…</h3>
+          <ul>
+            <li>Trace a link to the file it opens.</li>
+            <li>Build two choices with different consequences.</li>
+            <li>Test every visible path and repair one confusing link.</li>
+          </ul>
+        </div>
+        <div class="essential-question"><strong>Essential question</strong><p>How can links turn a few files into a story another person can navigate?</p></div>
+        <ol class="mission-step-list">
+          <li>
+            <details class="mission-step" id="step-play" open>
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Play the finished story</strong><span>Make a prediction before you inspect the files.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Use the preview. Follow both choices, notice where each one lands, and tell your navigator which ending you would choose.</p>
+                <div class="do-see-grid">
+                  <div class="do-see">
+                    <strong>Do</strong><span>Play both visible links and use Restart once.</span>
+                  </div>
+                  <div class="do-see">
+                    <strong>You should see</strong><span>Two different pages and a way back to the opening.</span>
+                  </div>
+                </div>
+                <div class="question-card">
+                  <h3>Turn and talk</h3>
+                  <p>Which choice feels more tempting, and what consequence do you predict? There is no single correct creative answer; support your prediction with one detail from the page.</p>
+                </div><label class="mission-check"><input type="checkbox" data-progress="play"> I can describe two paths a visitor can take.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-find">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Find the story map</strong><span>Learn the clue before answering the question.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Each page is a file. The visible words are the link text; the <code>href</code> value is the destination.</p>
+                <div class="file-job-grid">
+                  <article class="file-job">
+                    <div class="file-job-heading">
+                      <code>index.html</code><strong>opening</strong>
+                    </div>
+                    <pre><code>&lt;a href="choice-a.html"&gt;Open&lt;/a&gt;</code></pre>
+                    <p>The visitor sees “Open.” The browser opens <code>choice-a.html</code>.</p>
+                  </article>
+                  <article class="file-job file-job-css">
+                    <div class="file-job-heading">
+                      <code>choice-a.html</code><strong>branch A</strong>
+                    </div>
+                    <pre><code>&lt;h1&gt;Consequence A&lt;/h1&gt;</code></pre>
+                    <p>One possible consequence.</p>
+                  </article>
+                  <article class="file-job file-job-js">
+                    <div class="file-job-heading">
+                      <code>choice-b.html</code><strong>branch B</strong>
+                    </div>
+                    <pre><code>&lt;h1&gt;Consequence B&lt;/h1&gt;</code></pre>
+                    <p>A different possible consequence.</p>
+                  </article>
+                </div>
+                <div class="prediction-group" data-prediction-group="" data-answer="choice-b.html" data-hint="Read the value after href=. That is the file the browser opens." data-success="Correct. The href value names the destination file.">
+                  <p>Which file opens when a visitor clicks this link?</p>
+                  <pre class="edit-card">&lt;a href="choice-b.html"&gt;Ask the door&lt;/a&gt;</pre>
+                  <div class="prediction-options">
+                    <button class="prediction-choice" type="button" data-prediction-choice="index.html">index.html</button><button class="prediction-choice" type="button" data-prediction-choice="choice-a.html">choice-a.html</button><button class="prediction-choice" type="button" data-prediction-choice="choice-b.html">choice-b.html</button>
+                  </div>
+                  <p class="prediction-feedback" data-prediction-feedback="" role="status"></p>
+                </div>
+                <div class="file-tree" data-file-tree="" aria-label="Explorer path">
+                  meetings/02-branching-story/project/index.html
+                </div>
+                <div class="path-row"><code data-edit-path>meetings/02-branching-story/project/index.html</code><button class="copy-button" type="button" data-copy-path="meetings/02-branching-story/project/index.html">Copy path</button></div>
+                <p>In the Codespace tab, press <kbd>Ctrl</kbd>+<kbd>P</kbd> and open the path shown above. On a Mac, use <kbd>Cmd</kbd>+<kbd>P</kbd>.</p><label class="mission-check"><input type="checkbox" data-progress="find"> I can point to the opening file and explain what <code>href</code> controls.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-build">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Build the guided branch</strong><span>Change one link, then make the story yours.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Complete the small baseline before adding complexity. Save after each change and watch the preview.</p>
+                <div class="edit-recipe">
+                  <article class="edit-card">
+                    <h3>EDIT 1 · Premise</h3>
+                    <p>In <code>index.html</code>, change the opening heading and paragraph.</p>
+                    <pre>&lt;h1&gt;The Door That Wasn’t There&lt;/h1&gt; → &lt;h1&gt;The Vending Machine That Knew Too Much&lt;/h1&gt;</pre>
+                  </article>
+                  <article class="edit-card">
+                    <h3>EDIT 2 · Choice destination</h3>
+                    <p>Change one visible choice and its matching <code>href</code>. The words and destination should agree.</p>
+                    <pre>&lt;a href="choice-a.html"&gt;Open the door&lt;/a&gt;</pre>
+                  </article>
+                  <article class="edit-card">
+                    <h3>EDIT 3 · Consequence</h3>
+                    <p>Open the destination file and replace its heading and paragraph. Keep a Restart link.</p>
+                    <pre>&lt;a href="index.html"&gt;Restart&lt;/a&gt;</pre>
+                  </article>
+                </div>
+                <div class="do-see-grid">
+                  <div class="do-see">
+                    <strong>Look here</strong><span>Click both choices after every edit.</span>
+                  </div>
+                  <div class="do-see">
+                    <strong>You should see</strong><span>Both branches still open and each ending feels different.</span>
+                  </div>
+                </div><label class="mission-check"><input type="checkbox" data-progress="baseline" data-baseline-required=""> Our opening and two branches work.</label><label class="mission-check"><input type="checkbox" data-progress="map" data-baseline-required=""> Our visible link text matches its destination.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-test">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Choose a disaster and test it</strong><span>Creativity comes after the path works.</span></span>
+              </summary>
+              <div class="step-body">
+                <p data-baseline-state="">Complete the guided baseline first</p>
+                <p>Choose a premise and a constraint. The constraint makes the story more surprising without making the build larger.</p>
+                <div class="challenge-grid">
+                  <article class="challenge-card">
+                    <strong>Unexpected guest</strong>
+                    <p>A normal school object starts giving advice.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Two bad choices</strong>
+                    <p>Both choices work, but each creates a different problem.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Hidden third page</strong>
+                    <p>Builder level: add a bonus page and link to it from one ending.</p>
+                  </article>
+                </div>
+                <div class="test-card">
+                  <h3>Player test</h3>
+                  <ol>
+                    <li>Give the preview to another team without explaining it.</li>
+                    <li>Ask them to reach both endings and restart.</li>
+                    <li>Repair one broken, unclear, or misleading link they report.</li>
+                  </ol>
+                </div><label class="mission-check"><input type="checkbox" data-progress="test"> Another team reached an ending without coaching, and we made one revision.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-broadcast">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Explain the path</strong><span>Make your design understandable to someone else.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Complete the team log and demo sentence. Commit with <code>Meeting 2: branching story</code>, sync, verify the commit, and stop the Codespace.</p>
+                <p><strong>Demo sentence:</strong> “Our story invites the player to ____. The choice that creates the biggest consequence is ____ because ____.”</p>
+                <div class="stuck-card">
+                  <h3>Stuck ladder</h3>
+                  <ol>
+                    <li>Read the current edit and compare the link with the preview.</li>
+                    <li>Ask the navigator or tester to trace the <code>href</code>.</li>
+                    <li>Restore only the affected file from the starter if needed.</li>
+                    <li>Ask a peer, teacher, or optional AI adviser for one next step.</li>
+                  </ol>
+                </div><label class="mission-check"><input type="checkbox" data-progress="broadcast"> I can explain one link, one consequence, and one test-driven change.</label>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </section>
+      <aside class="preview-dock" aria-label="Live project preview">
+        <section class="preview-panel">
+          <div class="preview-head">
+            <div>
+              <p class="preview-kicker">Live preview</p><strong data-preview-label="">Team story</strong>
+            </div><span class="preview-status" data-preview-status="" role="status" aria-live="polite">Loading preview…</span>
+          </div>
+          <div class="preview-frame">
+            <iframe id="project-preview" title="Live preview of the Meeting 2 story" name="project-preview"></iframe>
+          </div>
+          <div class="external-preview" data-external-preview="" hidden="">
+            <div>
+              <h3>Play the external tool</h3>
+              <p>This mission is using an external editor. Open it, run after each small change, and save the code backup in your repository.</p><a class="mission-button primary" data-external-link="" target="_blank" rel="noreferrer" href="#">Open external editor</a><br>
+            </div>
+          </div>
+          <div class="preview-controls">
+            <button class="mission-button" type="button" data-reload-preview="">Reload Preview</button><a class="mission-button" data-full-preview="" target="_blank" rel="noreferrer" href="project/index.html">Open Full Preview</a>
+          </div>
+          <p class="preview-note"><strong>Two-tab rhythm:</strong> save in the Codespace tab, then watch this preview update.</p>
+        </section>
+        <div class="progress-panel" aria-label="Mission progress">
+          <div class="progress-heading">
+            <strong>Mission progress</strong><span data-progress-label="">0 checkpoints complete</span>
+          </div>
+          <div class="progress-track" aria-hidden="true"></div>
+        </div>
+      </aside>
+    </div>
+    <section class="roles-card" aria-labelledby="roles-title">
+      <p class="panel-kicker">Build together</p>
+      <h2 id="roles-title">Every role changes the story.</h2>
+      <p>Rotate roles next meeting. The navigator and tester are design roles.</p>
+      <div class="role-grid">
+        <article class="role-card">
+          <strong>Driver</strong>
+          <p>Edits only after the team agrees on the next change.</p>
+        </article>
+        <article class="role-card">
+          <strong>Navigator</strong>
+          <p>Reads the path and predicts what the link should open.</p>
+        </article>
+        <article class="role-card">
+          <strong>Designer / tester</strong>
+          <p>Checks whether a new player understands the choices.</p>
+        </article>
+        <article class="role-card">
+          <strong>Documentarian</strong>
+          <p>Records the branch map, test, and contribution.</p>
+        </article>
+      </div>
+    </section>
+    <section class="finish-card" aria-labelledby="finish-title">
+      <p class="panel-kicker">Ready to leave?</p>
+      <h2 id="finish-title">A story another team can play is the finish line.</h2>
+      <p>Everyone contributes a choice, a consequence, a test, or an explanation.</p><a class="mission-button primary" href="../../index.html">Return to mission launcher</a>
+    </section>
+  </main>
+  <script id="mission-config" type="application/json">
+  {"id":"02-branching-story","mode":"embedded","defaultTrack":"project","pathPrefix":"meetings/02-branching-story/","tracks":{"project":{"label":"Team story","preview":"project/index.html","watchPath":"project","editFiles":["project/index.html","project/choice-a.html","project/choice-b.html","project/style.css"]},"catchUp":{"label":"Catch-up story","preview":"catch-up/index.html","watchPath":"catch-up","editFiles":["catch-up/index.html","catch-up/choice-a.html","catch-up/choice-b.html","catch-up/style.css"]}}}
+  </script>
+  <script src="../../shared/mission-control.js"></script>
+</body>
+</html>

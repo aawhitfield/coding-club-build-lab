@@ -1,7 +1,7 @@
-// Required HTML: an input with id="name-input", a button with id="message-button",
+// Required HTML: an input with id="topic-input", a button with id="message-button",
 // and a result element with id="result-message".
 onClick("message-button", function () {
-  var name = valueOf("name-input").trim();
-  setText("result-message", name ? "Welcome, " + name + "!" : "Please type a name first.");
+  var topic = valueOf("topic-input").trim();
+  setText("result-message", topic ? "Your next step for " + topic + " is ready." : "Please type a topic first.");
   show("result-message");
 });

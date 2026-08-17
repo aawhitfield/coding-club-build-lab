@@ -507,6 +507,65 @@
   box-shadow: 0 18px 42px rgba(15, 23, 42, .2);
 }
 
+.preview-panel.is-external { background: #172033; }
+
+.external-preview {
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+  padding: clamp(24px, 5vw, 56px);
+  background: radial-gradient(circle at 20% 10%, #24385b, #152033 62%);
+  color: #f8fafc;
+  text-align: center;
+}
+
+.external-preview h3 { margin: 0 0 10px; font-size: clamp(1.7rem, 4vw, 2.6rem); letter-spacing: -.04em; }
+.external-preview p { max-width: 34rem; margin: 0 auto 18px; color: #cbd5e1; line-height: 1.55; }
+.external-preview code { display: inline-block; margin-top: 7px; border-radius: 8px; background: #0f172a; color: #bfdbfe; padding: 7px 9px; font: .78rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+.learning-targets,
+.essential-question,
+.question-card,
+.stuck-card,
+.test-card {
+  margin: 15px 0;
+  border: 1px solid #dbe4ee;
+  border-radius: 13px;
+  background: #f8fbff;
+  padding: 14px;
+}
+
+.learning-targets h3,
+.essential-question strong,
+.question-card h3,
+.stuck-card h3,
+.test-card h3 { margin: 0 0 8px; font-size: .9rem; letter-spacing: .02em; }
+.essential-question { border-left: 4px solid #fb7185; background: #fff7f7; }
+.essential-question strong { display: block; color: #be123c; }
+.essential-question p { margin: 0; color: #4b5563; line-height: 1.5; }
+.learning-targets ul,
+.question-card ul,
+.stuck-card ol,
+.test-card ol { margin: 0; }
+.question-card { border-left: 4px solid #60a5fa; }
+.stuck-card { border-left: 4px solid #f59e0b; background: #fffbeb; }
+.test-card { border-left: 4px solid #34d399; background: #ecfdf5; }
+
+.evidence-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin: 15px 0;
+}
+
+.evidence-strip div { border-radius: 10px; background: #fff; padding: 11px; }
+.evidence-strip strong,
+.evidence-strip span { display: block; }
+.evidence-strip strong { margin-bottom: 4px; color: var(--brand-dark); font-size: .78rem; }
+.evidence-strip span { color: var(--muted); font-size: .82rem; line-height: 1.4; }
+
+.mission-step code { color: #263d91; }
+
 .preview-head {
   display: flex;
   align-items: center;
@@ -726,6 +785,8 @@ kbd {
   .copy-button { align-self: flex-start; }
   .preview-frame,
   .preview-frame iframe { min-height: 430px; }
+  .external-preview { min-height: 350px; padding: 24px 18px; }
+  .evidence-strip { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

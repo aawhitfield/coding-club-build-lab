@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meeting 5 Mission Control: transform a working game base into a 30-second microgame.">
+  <title>Mission 05 · Build a 30-Second Obsession</title>
+  <link rel="stylesheet" href="../../shared/club-kit.css">
+  <link rel="stylesheet" href="../../shared/mission-control.css">
+</head>
+<body class="mission-body">
+  <header class="mission-topbar">
+    <a class="mission-brand" href="../../index.html">Coding Club · Build Lab</a><a href="../../index.html">Back to mission launcher</a>
+  </header>
+  <main class="mission-shell">
+    <section class="mission-intro" aria-labelledby="mission-title">
+      <div>
+        <p class="mission-kicker">Mission 05 · Design through playtesting</p>
+        <h1 id="mission-title">Build a 30-Second Obsession</h1>
+        <p class="lede">Choose a working game base, transform its identity, and make the goal understandable before the first half-minute is over.</p>
+      </div>
+      <div class="mission-contract" aria-label="Meeting promise">
+        <div>
+          <strong>30 sec</strong><span>Clear play loop</span>
+        </div>
+        <div>
+          <strong>3 bases</strong><span>Choose by interest</span>
+        </div>
+        <div>
+          <strong>1 revision</strong><span>Use player evidence</span>
+        </div>
+      </div>
+    </section>
+    <div class="mission-layout">
+      <section class="guide-column" aria-label="Mission directions">
+        <section class="track-card" aria-labelledby="track-title">
+          <p class="panel-kicker">Choose a mechanic</p>
+          <h2 id="track-title">Which game sounds fun to change?</h2>
+          <p>Choose a base by the kind of play you want, not by a difficulty ranking. New today? Start from any complete base.</p>
+          <div class="track-options" role="group" aria-label="Game base">
+            <button class="track-button" type="button" data-track-target="collector" aria-pressed="true">Collect + reach</button><button class="track-button" type="button" data-track-target="avoider">Avoid + reach</button><button class="track-button" type="button" data-track-target="puzzle">Push + solve</button>
+          </div>
+          <p class="small-note">Each base is complete before you edit. Keep this tab open while Sprig runs in another tab.</p>
+          <nav class="mission-jump" aria-label="Jump to a mission step">
+            <a href="#step-play">Play</a><a href="#step-find">Plan</a><a href="#step-change">Change</a><a href="#step-test">Test</a><a href="#step-broadcast">Broadcast</a>
+          </nav>
+          <p class="mission-status" data-mission-status="" role="status" aria-live="polite"></p>
+        </section>
+        <div class="learning-targets">
+          <h3>By the end, I can…</h3>
+          <ul>
+            <li>Explain a game’s input, feedback, and ending.</li>
+            <li>Transform a base without losing its playable loop.</li>
+            <li>Revise one decision using evidence from a player.</li>
+          </ul>
+        </div>
+        <div class="essential-question"><strong>Essential question</strong><p>What does a player need to understand and enjoy a tiny game in 30 seconds?</p></div>
+        <ol class="mission-step-list">
+          <li>
+            <details class="mission-step" id="step-play" open>
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Play the three bases</strong><span>Choose by the experience you want to create.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Open a base from the panel, run it in Sprig, and play until you can explain how a player wins or loses.</p>
+                <div class="challenge-grid">
+                  <article class="challenge-card">
+                    <strong>Collector</strong>
+                    <p>Collect a star, then reach the goal.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Avoider</strong>
+                    <p>Reach the goal while avoiding danger.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Push puzzle</strong>
+                    <p>Push a box onto the goal.</p>
+                  </article>
+                </div>
+                <div class="question-card">
+                  <h3>Quick choice</h3>
+                  <p>Which base gives your team the most interesting starting idea? Name the input, feedback, and ending you noticed.</p>
+                </div><label class="mission-check"><input type="checkbox" data-progress="play"> We chose a base because of its mechanic, not because it looked easiest.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-find">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Plan the 30-second loop</strong><span>Answer the player’s first questions.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Complete the planner before adding a mechanic. A good microgame answers these questions quickly:</p>
+                <div class="evidence-strip">
+                  <div>
+                    <strong>Goal</strong><span>What should I try to do?</span>
+                  </div>
+                  <div>
+                    <strong>Control</strong><span>What can I press or move?</span>
+                  </div>
+                  <div>
+                    <strong>Ending</strong><span>How do I know I won or lost?</span>
+                  </div>
+                </div>
+                <div class="prediction-group" data-prediction-group="" data-answer="ending" data-hint="The ending is the feedback that tells a player the attempt is over." data-success="Correct. A clear ending closes the loop.">
+                  <p>Which part tells the player whether the attempt is over?</p>
+                  <div class="prediction-options">
+                    <button class="prediction-choice" type="button" data-prediction-choice="goal">Goal</button><button class="prediction-choice" type="button" data-prediction-choice="control">Control</button><button class="prediction-choice" type="button" data-prediction-choice="ending">Ending</button>
+                  </div>
+                  <p class="prediction-feedback" data-prediction-feedback="" role="status"></p>
+                </div>
+                <div class="file-tree" data-file-tree="" aria-label="Sprig base path">
+                  meetings/05-microgame/bases/collector-game.js
+                </div>
+                <div class="path-row"><code data-edit-path>meetings/05-microgame/bases/collector-game.js</code><button class="copy-button" type="button" data-copy-path="meetings/05-microgame/bases/collector-game.js">Copy path</button></div>
+                <p>Use the selected base path in the Codespace tab as your backup. Run and save the active game in Sprig.</p><label class="mission-check"><input type="checkbox" data-progress="plan"> Our planner names a goal, control, feedback, and ending.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-change">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Make the guided transformation</strong><span>Identity first; mechanics second.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Change the title/instructions, all visible art, and the map or level layout. Run after each edit.</p>
+                <div class="edit-recipe">
+                  <article class="edit-card">
+                    <h3>EDIT 1 · Identity</h3>
+                    <p>Rename the game and rewrite the first instruction so a player knows the goal.</p>
+                    <pre>“Collect the moon cheese before sunrise.”</pre>
+                  </article>
+                  <article class="edit-card">
+                    <h3>EDIT 2 · World</h3>
+                    <p>Change the player, goal, and environment art. Keep the symbol keys intact.</p>
+                    <pre>[goal, bitmap`...`]</pre>
+                  </article>
+                  <article class="edit-card">
+                    <h3>EDIT 3 · Level</h3>
+                    <p>Change the map so the first move teaches the goal and the ending remains reachable.</p>
+                    <pre>Move one obstacle or add one safe turn.</pre>
+                  </article>
+                </div>
+                <p class="small-note"><strong>Beginner finish line:</strong> a new player can play, understand the goal, and reach an ending. Mechanics from the recipe cards are optional level-ups.</p><label class="mission-check"><input type="checkbox" data-progress="baseline" data-baseline-required=""> Our game looks and reads like a new game.</label><label class="mission-check"><input type="checkbox" data-progress="loop" data-baseline-required=""> The goal and ending still work.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-test">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Run the player test</strong><span>Use evidence, not guesses, to revise.</span></span>
+              </summary>
+              <div class="step-body">
+                <p data-baseline-state="">Complete the guided baseline first</p>
+                <div class="test-card">
+                  <h3>Ten-second test</h3>
+                  <ol>
+                    <li>Give the game to a player without explaining the goal.</li>
+                    <li>After ten seconds, ask what they think they are trying to do.</li>
+                    <li>Ask whether they know when they have won or lost.</li>
+                    <li>Make one revision based on the answer.</li>
+                  </ol>
+                </div>
+                <div class="challenge-grid">
+                  <article class="challenge-card">
+                    <strong>Remix</strong>
+                    <p>Art, map, title, instructions, and ending.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Builder</strong>
+                    <p>Add one recipe mechanic: obstacle, level, sound, win, or lose.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Boss</strong>
+                    <p>Combine mechanics or add progressive difficulty.</p>
+                  </article>
+                </div><label class="mission-check"><input type="checkbox" data-progress="test"> A player tested our game and we made one evidence-based revision.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-broadcast">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Save and explain the loop</strong><span>Make the player experience visible to your audience.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Save in Sprig, copy the final code into the selected backup file, and commit with <code>Meeting 5: microgame</code>. Sync, verify, and stop the Codespace.</p>
+                <p><strong>Demo sentence:</strong> “Players try to ____ by using ____. We learned ____ from the ten-second test, so we changed ____.”</p>
+                <div class="stuck-card">
+                  <h3>Stuck ladder</h3>
+                  <ol>
+                    <li>Run the last working version.</li>
+                    <li>Compare the map and one changed sprite with the base.</li>
+                    <li>Restore the base if the mechanic is no longer playable.</li>
+                    <li>Ask for one recipe-sized next step from a peer, teacher, or optional AI adviser.</li>
+                  </ol>
+                </div><label class="mission-check"><input type="checkbox" data-progress="broadcast"> I can explain the loop and the revision evidence.</label>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </section>
+      <aside class="preview-dock" aria-label="External Sprig workspace">
+        <section class="preview-panel is-external">
+          <div class="preview-head">
+            <div>
+              <p class="preview-kicker">External workspace</p><strong data-preview-label="">Collector base</strong>
+            </div><span class="preview-status" data-preview-status="" role="status" aria-live="polite">Ready to open Sprig</span>
+          </div>
+          <div class="preview-frame" hidden="">
+            <iframe id="project-preview" title="External Sprig preview" name="project-preview"></iframe>
+          </div>
+          <div class="external-preview" data-external-preview="">
+            <div>
+              <h3>Run the selected base</h3>
+              <p>Open Sprig in a new tab, paste the selected base, and press Run before changing anything.</p><a class="mission-button primary" data-external-link="" target="_blank" rel="noreferrer" href="https://sprig.hackclub.com/">Open Sprig</a><br>
+              <code data-external-path="">meetings/05-microgame/bases/collector-game.js</code>
+            </div>
+          </div>
+          <div class="preview-controls">
+            <button class="mission-button" type="button" data-reload-preview="">Refresh mission</button>
+          </div>
+          <p class="preview-note"><strong>External-tool rhythm:</strong> Mission Control plans the loop; Sprig shows the game.</p>
+        </section>
+        <div class="progress-panel" aria-label="Mission progress">
+          <div class="progress-heading">
+            <strong>Mission progress</strong><span data-progress-label="">0 checkpoints complete</span>
+          </div>
+          <div class="progress-track" aria-hidden="true"></div>
+        </div>
+      </aside>
+    </div>
+    <section class="roles-card" aria-labelledby="roles-title">
+      <p class="panel-kicker">Build together</p>
+      <h2 id="roles-title">A player is part of the team.</h2>
+      <p>Rotate who edits, watches the loop, plays, and records evidence.</p>
+      <div class="role-grid">
+        <article class="role-card">
+          <strong>Driver</strong>
+          <p>Changes one safe mechanic at a time.</p>
+        </article>
+        <article class="role-card">
+          <strong>Navigator</strong>
+          <p>Reads the loop planner and recipe.</p>
+        </article>
+        <article class="role-card">
+          <strong>Designer / tester</strong>
+          <p>Plays as a first-time player.</p>
+        </article>
+        <article class="role-card">
+          <strong>Documentarian</strong>
+          <p>Records the player evidence and revision.</p>
+        </article>
+      </div>
+    </section>
+    <section class="finish-card" aria-labelledby="finish-title">
+      <p class="panel-kicker">Ready to leave?</p>
+      <h2 id="finish-title">A stranger can understand the game is the finish line.</h2>
+      <p>Small, clear, and replayable beats ambitious and unfinished.</p><a class="mission-button primary" href="../../index.html">Return to mission launcher</a>
+    </section>
+  </main>
+  <script id="mission-config" type="application/json">
+  {"id":"05-microgame","mode":"external","defaultTrack":"collector","tracks":{"collector":{"mode":"external","label":"Collector base","externalUrl":"https://sprig.hackclub.com/","externalPath":"meetings/05-microgame/bases/collector-game.js","editFiles":["meetings/05-microgame/bases/collector-game.js"],"status":"Run the collector base, then change one thing."},"avoider":{"mode":"external","label":"Avoider base","externalUrl":"https://sprig.hackclub.com/","externalPath":"meetings/05-microgame/bases/avoider-game.js","editFiles":["meetings/05-microgame/bases/avoider-game.js"],"status":"Run the avoider base, then change one thing."},"puzzle":{"mode":"external","label":"Push-puzzle base","externalUrl":"https://sprig.hackclub.com/","externalPath":"meetings/05-microgame/bases/push-puzzle.js","editFiles":["meetings/05-microgame/bases/push-puzzle.js"],"status":"Run the push-puzzle base, then change one thing."}}}
+  </script>
+  <script src="../../shared/mission-control.js"></script>
+</body>
+</html>

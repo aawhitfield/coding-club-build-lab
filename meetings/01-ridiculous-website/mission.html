@@ -1,292 +1,302 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Meeting 1 Mission Control for Coding Club Build Lab: remix a ridiculous product website.">
-    <title>Mission 01 · The Ridiculous Website</title>
-    <link rel="stylesheet" href="../../shared/club-kit.css">
-    <link rel="stylesheet" href="../../shared/mission-control.css">
-  </head>
-  <body class="mission-body">
-    <header class="mission-topbar">
-      <a class="mission-brand" href="../../index.html">Coding Club · Build Lab</a>
-      <a href="../../index.html">Back to mission launcher</a>
-    </header>
-
-    <main class="mission-shell">
-      <section class="mission-intro" aria-labelledby="mission-title">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meeting 1 Mission Control for Coding Club Build Lab: remix a ridiculous product website.">
+  <title>Mission 01 · The Ridiculous Website</title>
+  <link rel="stylesheet" href="../../shared/club-kit.css">
+  <link rel="stylesheet" href="../../shared/mission-control.css">
+</head>
+<body class="mission-body">
+  <header class="mission-topbar">
+    <a class="mission-brand" href="../../index.html">Coding Club · Build Lab</a> <a href="../../index.html">Back to mission launcher</a>
+  </header>
+  <main class="mission-shell">
+    <section class="mission-intro" aria-labelledby="mission-title">
+      <div>
+        <p class="mission-kicker">Mission 01 · Build Lab</p>
+        <h1 id="mission-title">The Ridiculous Website</h1>
+        <p class="lede">Turn an ordinary idea into a product page nobody could have predicted. You will edit a working project, see the result immediately, and leave with something your team can explain.</p>
+      </div>
+      <div class="mission-contract" aria-label="Meeting promise">
         <div>
-          <p class="mission-kicker">Mission 01 · Build Lab</p>
-          <h1 id="mission-title">The Ridiculous Website</h1>
-          <p class="lede">Turn an ordinary idea into a product page nobody could have predicted. You will edit a working project, see the result immediately, and leave with something your team can explain.</p>
+          <strong>60 min</strong><span>One focused build</span>
         </div>
-        <div class="mission-contract" aria-label="Meeting promise">
-          <div><strong>60 min</strong><span>One focused build</span></div>
-          <div><strong>2 tabs</strong><span>Code + Mission Control</span></div>
-          <div><strong>0%</strong><span>Blank-screen panic</span></div>
+        <div>
+          <strong>2 tabs</strong><span>Code + Mission Control</span>
         </div>
-      </section>
-
-      <div class="mission-layout">
-        <section class="guide-column" aria-label="Mission directions">
-          <section class="track-card" aria-labelledby="track-title">
-            <p class="panel-kicker">Choose your entry point</p>
-            <h2 id="track-title">Were you here last time?</h2>
-            <p>Meeting 1 is standalone. Use the team project for the normal route, or use the catch-up copy if you are joining late or your team is not ready.</p>
-            <div class="track-options" role="group" aria-label="Project entry point">
-              <button class="track-button" type="button" data-track-target="project" aria-pressed="true">I’m with my team</button>
-              <button class="track-button" type="button" data-track-target="catchUp" aria-pressed="false">I need a fresh start</button>
-            </div>
-            <p class="small-note">Nothing is locked. Open a step, skip ahead, or reopen one whenever your team needs a reminder.</p>
-            <nav class="mission-jump" aria-label="Jump to a mission step">
-              <a href="#step-play">Play</a>
-              <a href="#step-find">Find</a>
-              <a href="#step-change">Change</a>
-              <a href="#step-build">Build</a>
-              <a href="#step-broadcast">Broadcast</a>
-            </nav>
-            <p class="mission-status" data-mission-status role="status" aria-live="polite"></p>
-          </section>
-
-          <ol class="mission-step-list">
-            <li>
-              <details class="mission-step" id="step-play" open>
-                <summary>
-                  <span class="step-number" aria-hidden="true"></span>
-                  <span class="step-title"><strong>Play the finished example</strong><span>Start with curiosity, not code.</span></span>
-                </summary>
-                <div class="step-body">
-                  <p>Use the preview on the right. Click <strong>Reveal a secret</strong>, read the review, and decide what feels intentionally ordinary about this page.</p>
-                  <div class="do-see-grid">
-                    <div class="do-see"><strong>Do</strong><span>Click the buttons and look at the page as a visitor.</span></div>
-                    <div class="do-see"><strong>You should see</strong><span>A secret message appear without leaving the page.</span></div>
+        <div>
+          <strong>0%</strong><span>Blank-screen panic</span>
+        </div>
+      </div>
+    </section>
+    <div class="mission-layout">
+      <section class="guide-column" aria-label="Mission directions">
+        <section class="track-card" aria-labelledby="track-title">
+          <p class="panel-kicker">Choose your entry point</p>
+          <h2 id="track-title">Were you here last time?</h2>
+          <p>Meeting 1 is standalone. Use the team project for the normal route, or use the catch-up copy if you are joining late or your team is not ready.</p>
+          <div class="track-options" role="group" aria-label="Project entry point">
+            <button class="track-button" type="button" data-track-target="project" aria-pressed="true">I’m with my team</button> <button class="track-button" type="button" data-track-target="catchUp" aria-pressed="false">I need a fresh start</button>
+          </div>
+          <p class="small-note">Nothing is locked. Open a step, skip ahead, or reopen one whenever your team needs a reminder.</p>
+          <nav class="mission-jump" aria-label="Jump to a mission step">
+            <a href="#step-play">Play</a> <a href="#step-find">Find</a> <a href="#step-change">Change</a> <a href="#step-build">Build</a> <a href="#step-broadcast">Broadcast</a>
+          </nav>
+          <p class="mission-status" data-mission-status="" role="status" aria-live="polite"></p>
+        </section>
+        <div class="learning-targets"><h3>By the end, I can…</h3><ul><li>Explain the different jobs of HTML, CSS, and JavaScript.</li><li>Modify a working project without starting from blank.</li><li>Test and explain one visible change.</li></ul></div>
+        <div class="essential-question"><strong>Essential question</strong><p>How can we turn a working starting point into a product page that feels unmistakably ours?</p></div>
+        <ol class="mission-step-list">
+          <li>
+            <details class="mission-step" id="step-play" open>
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Play the finished example</strong><span>Start with curiosity, not code.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Use the preview on the right. Click <strong>Reveal a secret</strong>, read the review, and decide what feels intentionally ordinary about this page.</p>
+                <div class="do-see-grid">
+                  <div class="do-see">
+                    <strong>Do</strong><span>Click the buttons and look at the page as a visitor.</span>
                   </div>
-                  <label class="mission-check"><input type="checkbox" data-progress="play"> I can describe one thing the page does before I look at its code.</label>
-                </div>
-              </details>
-            </li>
-
-            <li>
-              <details class="mission-step" id="step-predict">
-                <summary>
-                  <span class="step-number" aria-hidden="true"></span>
-                  <span class="step-title"><strong>Meet the three file jobs</strong><span>Use clues before you choose.</span></span>
-                </summary>
-                <div class="step-body">
-                  <p>You are not supposed to know this yet. Read the small clues, make a first guess, and then verify it by opening the real files in the next step.</p>
-                  <div class="file-job-grid" aria-label="Three file jobs">
-                    <article class="file-job file-job-html">
-                      <div class="file-job-heading"><code>index.html</code><strong>What exists</strong></div>
-                      <pre><code>&lt;h1&gt;Rock Royale&lt;/h1&gt;
+                  <div class="do-see">
+                    <strong>You should see</strong><span>A secret message appear without leaving the page.</span>
+                  </div>
+                </div><label class="mission-check"><input type="checkbox" data-progress="play"> I can describe one thing the page does before I look at its code.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-predict">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Meet the three file jobs</strong><span>Use clues before you choose.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>You are not supposed to know this yet. Read the small clues, make a first guess, and then verify it by opening the real files in the next step.</p>
+                <div class="file-job-grid" aria-label="Three file jobs">
+                  <article class="file-job file-job-html">
+                    <div class="file-job-heading">
+                      <code>index.html</code><strong>What exists</strong>
+                    </div>
+                    <pre><code>&lt;h1&gt;Rock Royale&lt;/h1&gt;
 &lt;img alt="..."&gt;</code></pre>
-                      <p>Words, images, buttons, and structure.</p>
-                    </article>
-                    <article class="file-job file-job-css">
-                      <div class="file-job-heading"><code>style.css</code><strong>How it looks</strong></div>
-                      <pre><code>--product: #64748b;
+                    <p>Words, images, buttons, and structure.</p>
+                  </article>
+                  <article class="file-job file-job-css">
+                    <div class="file-job-heading">
+                      <code>style.css</code><strong>How it looks</strong>
+                    </div>
+                    <pre><code>--product: #64748b;
 --paper: #fff7ed;</code></pre>
-                      <p>Colors, spacing, layout, and appearance.</p>
-                    </article>
-                    <article class="file-job file-job-js">
-                      <div class="file-job-heading"><code>script.js</code><strong>What it does</strong></div>
-                      <pre><code>onClick("button", ...)</code></pre>
-                      <p>Clicks, decisions, and visible responses.</p>
-                    </article>
-                  </div>
-                  <div class="prediction-group" data-prediction-group data-answer="index.html" data-hint="Look for the clue with HTML tags such as &lt;h1&gt; and &lt;img&gt;.">
-                    <p>Which file holds the product title and image description?</p>
-                    <div class="prediction-options">
-                      <button class="prediction-choice" type="button" data-prediction-choice="index.html">index.html</button>
-                      <button class="prediction-choice" type="button" data-prediction-choice="style.css">style.css</button>
-                      <button class="prediction-choice" type="button" data-prediction-choice="script.js">script.js</button>
+                    <p>Colors, spacing, layout, and appearance.</p>
+                  </article>
+                  <article class="file-job file-job-js">
+                    <div class="file-job-heading">
+                      <code>script.js</code><strong>What it does</strong>
                     </div>
-                    <p class="prediction-feedback" data-prediction-feedback role="status"></p>
-                  </div>
-                  <div class="prediction-group" data-prediction-group data-answer="style.css" data-hint="Look for the clue with color values and CSS variables such as --product.">
-                    <p>Which file holds the colors and layout rules?</p>
-                    <div class="prediction-options">
-                      <button class="prediction-choice" type="button" data-prediction-choice="index.html">index.html</button>
-                      <button class="prediction-choice" type="button" data-prediction-choice="style.css">style.css</button>
-                      <button class="prediction-choice" type="button" data-prediction-choice="script.js">script.js</button>
-                    </div>
-                    <p class="prediction-feedback" data-prediction-feedback role="status"></p>
-                  </div>
-                  <div class="prediction-group" data-prediction-group data-answer="script.js" data-hint="Look for the clue with onClick and a response that runs after a user action.">
-                    <p>Which file contains the response to clicking <strong>Reveal a secret</strong>?</p>
-                    <div class="prediction-options">
-                      <button class="prediction-choice" type="button" data-prediction-choice="index.html">index.html</button>
-                      <button class="prediction-choice" type="button" data-prediction-choice="style.css">style.css</button>
-                      <button class="prediction-choice" type="button" data-prediction-choice="script.js">script.js</button>
-                    </div>
-                    <p class="prediction-feedback" data-prediction-feedback role="status"></p>
-                  </div>
-                  <p class="small-note"><strong>Important:</strong> a guess is not a grade. You will prove it by opening the files and changing one line.</p>
-                  <label class="mission-check"><input type="checkbox" data-progress="predict"> I can explain the different jobs of HTML, CSS, and JavaScript.</label>
+                    <pre><code>onClick("button", ...)</code></pre>
+                    <p>Clicks, decisions, and visible responses.</p>
+                  </article>
                 </div>
-              </details>
-            </li>
-
-            <li>
-              <details class="mission-step" id="step-find">
-                <summary>
-                  <span class="step-number" aria-hidden="true"></span>
-                  <span class="step-title"><strong>Find the code</strong><span>Use the Codespace tab for editing.</span></span>
-                </summary>
-                <div class="step-body">
-                  <p>Keep this Mission Control tab open. Switch to your Codespace tab, press <kbd>Ctrl</kbd>+<kbd>P</kbd>, and type the path below. On a Mac, use <kbd>Cmd</kbd>+<kbd>P</kbd>.</p>
-                  <div class="file-tree" data-file-tree aria-label="Explorer path">meetings/
-  01-ridiculous-website/
-    project/
-      index.html   ← start here
-      style.css
-      script.js</div>
-                  <div class="path-row">
-                    <code data-edit-path>meetings/01-ridiculous-website/project/index.html</code>
-                    <button class="copy-button" type="button" data-copy-path="meetings/01-ridiculous-website/project/index.html">Copy path</button>
+                <div class="prediction-group" data-prediction-group="" data-answer="index.html" data-hint="Look for the clue with HTML tags such as &lt;h1&gt; and &lt;img&gt;.">
+                  <p>Which file holds the product title and image description?</p>
+                  <div class="prediction-options">
+                    <button class="prediction-choice" type="button" data-prediction-choice="index.html">index.html</button> <button class="prediction-choice" type="button" data-prediction-choice="style.css">style.css</button> <button class="prediction-choice" type="button" data-prediction-choice="script.js">script.js</button>
                   </div>
-                  <p class="small-note"><strong>Important:</strong> open the file in the Codespace editor, not in the browser preview. The preview is where you observe the result.</p>
-                  <div class="track-only is-hidden" data-track-only="catchUp" hidden>
-                    <p><strong>Fresh-start file:</strong> use <code>meetings/01-ridiculous-website/catch-up/index.html</code> and the matching <code>style.css</code>.</p>
-                  </div>
-                  <label class="mission-check"><input type="checkbox" data-progress="find"> I can point to the file I will edit and the tab where I will see the result.</label>
+                  <p class="prediction-feedback" data-prediction-feedback="" role="status"></p>
                 </div>
-              </details>
-            </li>
-
-            <li>
-              <details class="mission-step" id="step-change">
-                <summary>
-                  <span class="step-number" aria-hidden="true"></span>
-                  <span class="step-title"><strong>Make the guided remix</strong><span>Change one thing, save, and look again.</span></span>
-                </summary>
-                <div class="step-body">
-                  <p>Complete the baseline in order. Saving after each small change lets you connect the code to the visible result.</p>
-                  <div class="edit-recipe">
-                    <article class="edit-card">
-                      <h3>EDIT 1 · Product name</h3>
-                      <p>In <code>index.html</code>, replace the text inside the <code>&lt;h1&gt;</code>.</p>
-                      <pre>&lt;h1&gt;Rock Royale&lt;/h1&gt;
+                <div class="prediction-group" data-prediction-group="" data-answer="style.css" data-hint="Look for the clue with color values and CSS variables such as --product.">
+                  <p>Which file holds the colors and layout rules?</p>
+                  <div class="prediction-options">
+                    <button class="prediction-choice" type="button" data-prediction-choice="index.html">index.html</button> <button class="prediction-choice" type="button" data-prediction-choice="style.css">style.css</button> <button class="prediction-choice" type="button" data-prediction-choice="script.js">script.js</button>
+                  </div>
+                  <p class="prediction-feedback" data-prediction-feedback="" role="status"></p>
+                </div>
+                <div class="prediction-group" data-prediction-group="" data-answer="script.js" data-hint="Look for the clue with onClick and a response that runs after a user action.">
+                  <p>Which file contains the response to clicking <strong>Reveal a secret</strong>?</p>
+                  <div class="prediction-options">
+                    <button class="prediction-choice" type="button" data-prediction-choice="index.html">index.html</button> <button class="prediction-choice" type="button" data-prediction-choice="style.css">style.css</button> <button class="prediction-choice" type="button" data-prediction-choice="script.js">script.js</button>
+                  </div>
+                  <p class="prediction-feedback" data-prediction-feedback="" role="status"></p>
+                </div>
+                <p class="small-note"><strong>Important:</strong> a guess is not a grade. You will prove it by opening the files and changing one line.</p><label class="mission-check"><input type="checkbox" data-progress="predict"> I can explain the different jobs of HTML, CSS, and JavaScript.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-find">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Find the code</strong><span>Use the Codespace tab for editing.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Keep this Mission Control tab open. Switch to your Codespace tab, press <kbd>Ctrl</kbd>+<kbd>P</kbd>, and type the path below. On a Mac, use <kbd>Cmd</kbd>+<kbd>P</kbd>.</p>
+                <div class="file-tree" data-file-tree="" aria-label="Explorer path">
+                  meetings/ 01-ridiculous-website/ project/ index.html ← start here style.css script.js
+                </div>
+                <div class="path-row">
+                  <code data-edit-path="">meetings/01-ridiculous-website/project/index.html</code> <button class="copy-button" type="button" data-copy-path="meetings/01-ridiculous-website/project/index.html">Copy path</button>
+                </div>
+                <p class="small-note"><strong>Important:</strong> open the file in the Codespace editor, not in the browser preview. The preview is where you observe the result.</p>
+                <div class="track-only is-hidden" data-track-only="catchUp" hidden="">
+                  <p><strong>Fresh-start file:</strong> use <code>meetings/01-ridiculous-website/catch-up/index.html</code> and the matching <code>style.css</code>.</p>
+                </div><label class="mission-check"><input type="checkbox" data-progress="find"> I can point to the file I will edit and the tab where I will see the result.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-change">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Make the guided remix</strong><span>Change one thing, save, and look again.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Complete the baseline in order. Saving after each small change lets you connect the code to the visible result.</p>
+                <div class="edit-recipe">
+                  <article class="edit-card">
+                    <h3>EDIT 1 · Product name</h3>
+                    <p>In <code>index.html</code>, replace the text inside the <code>&lt;h1&gt;</code>.</p>
+                    <pre>&lt;h1&gt;Rock Royale&lt;/h1&gt;
 → &lt;h1&gt;Emergency Invisible Umbrellas&lt;/h1&gt;</pre>
-                    </article>
-                    <article class="edit-card">
-                      <h3>EDIT 2 · Description and alt text</h3>
-                      <p>Change the description and describe the new image honestly in its <code>alt</code> text.</p>
-                      <pre>&lt;img ... alt="A dramatically lit invisible umbrella"&gt;</pre>
-                    </article>
-                    <article class="edit-card">
-                      <h3>EDIT 3 · Theme</h3>
-                      <p>In <code>style.css</code>, change at least three values in the <code>:root</code> color variables.</p>
-                      <pre>--product: #db2777;
+                  </article>
+                  <article class="edit-card">
+                    <h3>EDIT 2 · Description and alt text</h3>
+                    <p>Change the description and describe the new image honestly in its <code>alt</code> text.</p>
+                    <pre>&lt;img ... alt="A dramatically lit invisible umbrella"&gt;</pre>
+                  </article>
+                  <article class="edit-card">
+                    <h3>EDIT 3 · Theme</h3>
+                    <p>In <code>style.css</code>, change at least three values in the <code>:root</code> color variables.</p>
+                    <pre>--product: #db2777;
 --paper: #ecfeff;
 --button: #0f766e;</pre>
-                    </article>
-                  </div>
-                  <p class="small-note"><strong>Look here:</strong> the title, description, image text, and color theme should all change in the preview. If one does not, change only that one thing again.</p>
-                  <label class="mission-check"><input type="checkbox" data-progress="title" data-baseline-required> I changed the product name and saw it update.</label>
-                  <label class="mission-check"><input type="checkbox" data-progress="alt" data-baseline-required> I changed the image alt text and kept it accurate.</label>
-                  <label class="mission-check"><input type="checkbox" data-progress="theme" data-baseline-required> I changed three CSS values and saw the visual theme update.</label>
+                  </article>
                 </div>
-              </details>
-            </li>
-
-            <li>
-              <details class="mission-step" id="step-build">
-                <summary>
-                  <span class="step-number" aria-hidden="true"></span>
-                  <span class="step-title"><strong>Make it unmistakably yours</strong><span>Choose a direction and build with your team.</span></span>
-                </summary>
-                <div class="step-body">
-                  <p data-baseline-state>Complete the guided baseline first</p>
-                  <p>Choose one ridiculous product direction, then divide the work. The required result is small enough to finish today.</p>
-                  <div class="challenge-grid">
-                    <article class="challenge-card"><strong>Sell the impossible</strong><p>An emergency subscription for invisible umbrellas.</p></article>
-                    <article class="challenge-card"><strong>Remix the ordinary</strong><p>A luxury store for rocks, pencils, or the school’s most boring object.</p></article>
-                    <article class="challenge-card"><strong>Invent a problem</strong><p>A premium service that solves something nobody has.</p></article>
-                  </div>
-                  <ul>
-                    <li><strong>Remix:</strong> change the product, image, price, review, button, and three colors.</li>
-                    <li><strong>Builder:</strong> copy one review card and turn it into a second review.</li>
-                    <li><strong>Boss Level:</strong> make the surprise button reveal a ridiculous fact or random testimonial.</li>
-                  </ul>
-                  <label class="mission-check"><input type="checkbox" data-progress="team-build"> Our team has changed the required content and added one feature beyond text replacement.</label>
+                <p class="small-note"><strong>Look here:</strong> the title, description, image text, and color theme should all change in the preview. If one does not, change only that one thing again.</p><label class="mission-check"><input type="checkbox" data-progress="title" data-baseline-required=""> I changed the product name and saw it update.</label> <label class="mission-check"><input type="checkbox" data-progress="alt" data-baseline-required=""> I changed the image alt text and kept it accurate.</label> <label class="mission-check"><input type="checkbox" data-progress="theme" data-baseline-required=""> I changed three CSS values and saw the visual theme update.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-build">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Make it unmistakably yours</strong><span>Choose a direction and build with your team.</span></span>
+              </summary>
+              <div class="step-body">
+                <p data-baseline-state="">Complete the guided baseline first</p>
+                <p>Choose one ridiculous product direction, then divide the work. The required result is small enough to finish today.</p>
+                <div class="challenge-grid">
+                  <article class="challenge-card">
+                    <strong>Sell the impossible</strong>
+                    <p>An emergency subscription for invisible umbrellas.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Remix the ordinary</strong>
+                    <p>A luxury store for rocks, pencils, or the school’s most boring object.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Invent a problem</strong>
+                    <p>A premium service that solves something nobody has.</p>
+                  </article>
                 </div>
-              </details>
-            </li>
-
-            <li>
-              <details class="mission-step" id="step-broadcast">
-                <summary>
-                  <span class="step-number" aria-hidden="true"></span>
-                  <span class="step-title"><strong>Test, explain, and broadcast</strong><span>Make your work understandable to another team.</span></span>
-                </summary>
-                <div class="step-body">
-                  <p>Ask a teammate or another team to use the page without coaching. Repair one confusing label, broken button, or visual problem.</p>
-                  <ul>
-                    <li>Explain one HTML change and one CSS change.</li>
-                    <li>Show the feature your team added.</li>
-                    <li>Complete <code>TEAM-LOG.md</code>, <code>AI-LOG.md</code> if needed, and <code>DEMO.md</code>.</li>
-                    <li>Commit with the message below, sync, verify it on GitHub, and stop the Codespace.</li>
-                  </ul>
-                  <span class="commit-line">Meeting 1: ridiculous website remix</span>
-                  <p><strong>Demo sentence:</strong> “Our website exists because ____. The most ridiculous thing we intentionally built is ____.”</p>
-                  <details class="help-details">
-                    <summary>Stuck or curious about AI?</summary>
-                    <p>First ask a teammate to help you compare the file and the preview. After the baseline works, you may ask:</p>
-                    <pre>Which file probably controls this color?
+                <ul>
+                  <li><strong>Remix:</strong> change the product, image, price, review, button, and three colors.</li>
+                  <li><strong>Builder:</strong> copy one review card and turn it into a second review.</li>
+                  <li><strong>Boss Level:</strong> make the surprise button reveal a ridiculous fact or random testimonial.</li>
+                </ul><label class="mission-check"><input type="checkbox" data-progress="team-build"> Our team has changed the required content and added one feature beyond text replacement.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-broadcast">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Test, explain, and broadcast</strong><span>Make your work understandable to another team.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Ask a teammate or another team to use the page without coaching. Repair one confusing label, broken button, or visual problem.</p>
+                <ul>
+                  <li>Explain one HTML change and one CSS change.</li>
+                  <li>Show the feature your team added.</li>
+                  <li>Complete <code>TEAM-LOG.md</code>, <code>AI-LOG.md</code> if needed, and <code>DEMO.md</code>.</li>
+                  <li>Commit with the message below, sync, verify it on GitHub, and stop the Codespace.</li>
+                </ul><span class="commit-line">Meeting 1: ridiculous website remix</span>
+                <p><strong>Demo sentence:</strong> “Our website exists because ____. The most ridiculous thing we intentionally built is ____.”</p>
+                  <details class="help-details stuck-card">
+                  <summary>
+                    Stuck ladder or curious about AI?
+                  </summary>
+                  <ol>
+                    <li>Reread the current edit and compare the file with the preview.</li>
+                    <li>Ask the navigator or designer/tester to name what changed.</li>
+                    <li>Restore only the affected file from the starter if the page is damaged.</li>
+                  </ol>
+                  <p>After the baseline works, you may ask a peer, teacher, or optional AI adviser:</p>
+                  <pre>Which file probably controls this color?
 Do not rewrite the project. Give us one next step.</pre>
-                    <p>Change one thing, test it, and record the decision in <code>AI-LOG.md</code>.</p>
-                  </details>
-                  <label class="mission-check"><input type="checkbox" data-progress="broadcast"> I can explain what we changed, what we tested, and what I contributed.</label>
-                </div>
-              </details>
-            </li>
-          </ol>
-        </section>
-
-        <aside class="preview-dock" aria-label="Live project preview">
-          <section class="preview-panel">
-            <div class="preview-head">
-              <div><p class="preview-kicker">Live preview</p><strong data-preview-label>Team project</strong></div>
-              <span class="preview-status" data-preview-status role="status" aria-live="polite">Loading preview…</span>
-            </div>
-            <div class="preview-frame">
-              <iframe id="project-preview" title="Live preview of the Meeting 1 project"></iframe>
-            </div>
-            <div class="preview-controls">
-              <button class="mission-button" type="button" data-reload-preview>Reload Preview</button>
-              <a class="mission-button" data-full-preview target="_blank" rel="noreferrer" href="project/index.html">Open Full Preview</a>
-            </div>
-            <p class="preview-note"><strong>Two-tab rhythm:</strong> save in the Codespace tab, then watch this preview update. Keep Mission Control open while you edit.</p>
-          </section>
-          <div class="progress-panel" aria-label="Mission progress">
-            <div class="progress-heading"><strong>Mission progress</strong><span data-progress-label>0 checkpoints complete</span></div>
-            <div class="progress-track" aria-hidden="true"><span data-progress-fill></span></div>
+                  <p>Change one thing, test it, and record the decision in <code>AI-LOG.md</code>.</p>
+                </details><label class="mission-check"><input type="checkbox" data-progress="broadcast"> I can explain what we changed, what we tested, and what I contributed.</label>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </section>
+      <aside class="preview-dock" aria-label="Live project preview">
+        <section class="preview-panel">
+          <div class="preview-head">
+            <div>
+              <p class="preview-kicker">Live preview</p><strong data-preview-label="">Team project</strong>
+            </div><span class="preview-status" data-preview-status="" role="status" aria-live="polite">Loading preview…</span>
           </div>
-        </aside>
-      </div>
-
-      <section class="roles-card" aria-labelledby="roles-title">
-        <p class="panel-kicker">Build together</p>
-        <h2 id="roles-title">Nobody has to be the fastest coder.</h2>
-        <p>Choose roles before you build. Rotate them at the next meeting.</p>
-        <div class="role-grid">
-          <article class="role-card"><strong>Driver</strong><p>Operates the Chromebook and makes the agreed edits.</p></article>
-          <article class="role-card"><strong>Navigator</strong><p>Reads the next step, predicts behavior, and keeps the team moving.</p></article>
-          <article class="role-card"><strong>Designer / tester</strong><p>Checks appearance, clarity, accessibility, and bugs.</p></article>
-          <article class="role-card"><strong>Documentarian</strong><p>Records decisions, contributions, and the demo explanation.</p></article>
+          <div class="preview-frame">
+            <iframe id="project-preview" title="Live preview of the Meeting 1 project" name="project-preview"></iframe>
+          </div>
+          <div class="preview-controls">
+            <button class="mission-button" type="button" data-reload-preview="">Reload Preview</button> <a class="mission-button" data-full-preview="" target="_blank" rel="noreferrer" href="project/index.html">Open Full Preview</a>
+          </div>
+          <p class="preview-note"><strong>Two-tab rhythm:</strong> save in the Codespace tab, then watch this preview update. Keep Mission Control open while you edit.</p>
+        </section>
+        <div class="progress-panel" aria-label="Mission progress">
+          <div class="progress-heading">
+            <strong>Mission progress</strong><span data-progress-label="">0 checkpoints complete</span>
+          </div>
+          <div class="progress-track" aria-hidden="true"></div>
         </div>
-      </section>
-
-      <section class="finish-card" aria-labelledby="finish-title">
-        <p class="panel-kicker">Ready to leave?</p>
-        <h2 id="finish-title">A working project is the finish line.</h2>
-        <p>Everyone contributes something visible, everyone can explain one choice, and the team leaves a verified commit behind.</p>
-        <a class="mission-button primary" href="../../index.html">Return to mission launcher</a>
-      </section>
-    </main>
-
-    <script id="mission-config" type="application/json">
+      </aside>
+    </div>
+    <section class="roles-card" aria-labelledby="roles-title">
+      <p class="panel-kicker">Build together</p>
+      <h2 id="roles-title">Nobody has to be the fastest coder.</h2>
+      <p>Choose roles before you build. Rotate them at the next meeting.</p>
+      <div class="role-grid">
+        <article class="role-card">
+          <strong>Driver</strong>
+          <p>Operates the Chromebook and makes the agreed edits.</p>
+        </article>
+        <article class="role-card">
+          <strong>Navigator</strong>
+          <p>Reads the next step, predicts behavior, and keeps the team moving.</p>
+        </article>
+        <article class="role-card">
+          <strong>Designer / tester</strong>
+          <p>Checks appearance, clarity, accessibility, and bugs.</p>
+        </article>
+        <article class="role-card">
+          <strong>Documentarian</strong>
+          <p>Records decisions, contributions, and the demo explanation.</p>
+        </article>
+      </div>
+    </section>
+    <section class="finish-card" aria-labelledby="finish-title">
+      <p class="panel-kicker">Ready to leave?</p>
+      <h2 id="finish-title">A working project is the finish line.</h2>
+      <p>Everyone contributes something visible, everyone can explain one choice, and the team leaves a verified commit behind.</p><a class="mission-button primary" href="../../index.html">Return to mission launcher</a>
+    </section>
+  </main>
+  <script id="mission-config" type="application/json">
       {
         "id": "01-ridiculous-website",
         "mode": "embedded",
@@ -296,16 +306,18 @@ Do not rewrite the project. Give us one next step.</pre>
           "project": {
             "preview": "project/index.html",
             "watchPath": "project",
-            "editFiles": ["project/index.html", "project/style.css", "project/script.js"]
+            "editFiles": ["project/index.html", "project/style.css", "project/script.js"],
+            "fileTree": "meetings/\n  01-ridiculous-website/\n    project/\n      index.html   ← start here\n      style.css\n      script.js"
           },
           "catchUp": {
             "preview": "catch-up/index.html",
             "watchPath": "catch-up",
-            "editFiles": ["catch-up/index.html", "catch-up/style.css", "catch-up/script.js"]
+            "editFiles": ["catch-up/index.html", "catch-up/style.css", "catch-up/script.js"],
+            "fileTree": "meetings/\n  01-ridiculous-website/\n    catch-up/\n      index.html   ← start here\n      style.css\n      script.js"
           }
         }
       }
-    </script>
-    <script src="../../shared/mission-control.js"></script>
-  </body>
+  </script>
+  <script src="../../shared/mission-control.js"></script>
+</body>
 </html>

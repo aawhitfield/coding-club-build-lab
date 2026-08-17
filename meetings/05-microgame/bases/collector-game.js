@@ -89,7 +89,7 @@ afterInput(() => {
   if (tilesWith(star, player).length > 0) {
     collected = true;
     const starSprite = getFirst(star);
-    if (starSprite) clearTile(starSprite.x, starSprite.y);
+    if (starSprite) starSprite.remove();
   }
   if (collected && tilesWith(goal, player).length > 0) addText("YOU WIN!", { y: 4, color: color`5` });
 });

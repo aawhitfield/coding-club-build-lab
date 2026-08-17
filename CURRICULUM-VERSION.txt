@@ -1,0 +1,6 @@
+Coding Club Build Lab
+Mission Control release: 2026.08-pilot
+
+Team repositories are snapshots of this release. Teacher updates are tested
+before a new team repository is created; students do not merge template
+histories into active project repositories.

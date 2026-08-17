@@ -49,9 +49,23 @@ try {
   const versionBody = await version.json();
   assert(version.ok && versionBody.ok && Number.isFinite(versionBody.version), "GET /__version did not return a numeric version");
 
-  const mission = await get("/meetings/01-ridiculous-website/mission.html");
-  const missionText = await mission.text();
-  assert(mission.ok && missionText.includes("The Ridiculous Website"), "Mission Control page did not load");
+  const missionRoutes = [
+    ["01-ridiculous-website", "The Ridiculous Website"],
+    ["02-branching-story", "Choose Your Own Disaster"],
+    ["03-events-and-endings", "Trigger the Secret Ending"],
+    ["04-sprig-remix", "Remix the Rules"],
+    ["05-microgame", "Build a 30-Second Obsession"],
+    ["06-school-problem", "Fix One School Annoyance"],
+    ["07-working-feature", "Make It Work"],
+    ["08-showcase", "Broadcast What You Built"]
+  ];
+  for (const [meeting, heading] of missionRoutes) {
+    const mission = await get(`/meetings/${meeting}/mission.html`);
+    const missionText = await mission.text();
+    assert(mission.ok && missionText.includes(heading), `Mission Control page did not load: ${meeting}`);
+    assert(missionText.includes('id="mission-config"'), `Mission configuration missing: ${meeting}`);
+    assert(missionText.includes("data-progress"), `Mission progress controls missing: ${meeting}`);
+  }
 
   const missing = await get("/does-not-exist.html");
   assert(missing.status === 404, "Missing static file did not return 404");
