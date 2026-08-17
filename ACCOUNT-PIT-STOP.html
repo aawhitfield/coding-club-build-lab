@@ -45,6 +45,7 @@
           <h2>Before we begin</h2>
           <p>Create or use an account only if your teacher and district have approved it. Use a non-identifying username, verify your email, and keep recovery information private. GitHub Education verification is helpful, but it is not required for the first build.</p>
           <div class="status-strip"><strong>No account yet?</strong> Join a working team as navigator, designer/tester, or documentarian. Never share credentials or use someone else’s account.</div>
+          <p class="small-note">Teacher release: <a href="CURRICULUM-VERSION.txt">2026.08-pilot</a>. The template is a snapshot, not a live update stream.</p>
         </article>
 
         <article class="setup-card">
@@ -63,6 +64,7 @@
             <li>Wait for the launcher to appear. If the preview is not visible, open the <strong>Ports</strong> panel and open port <strong>8000</strong>.</li>
             <li>Keep two tabs open: the Codespace editor for code and Mission Control for directions.</li>
           </ol>
+          <div class="status-strip"><strong>Four things, four jobs:</strong> GitHub holds the repository, Codespace is the editor, Mission Control explains the mission, and the forwarded preview shows the result.</div>
         </article>
 
         <article class="setup-card">
@@ -86,12 +88,12 @@
 
       <section class="setup-card" style="margin-top: 16px;" aria-labelledby="green-title">
         <h2 id="green-title">Green means ready for Day 1</h2>
-        <div class="setup-checklist">
-          <label class="setup-check"><input type="checkbox"> Our team has a private repository.</label>
-          <label class="setup-check"><input type="checkbox"> The captain and backup driver can open it.</label>
-          <label class="setup-check"><input type="checkbox"> The preview shows a working project.</label>
-          <label class="setup-check"><input type="checkbox"> We changed one heading and saw the result.</label>
-          <label class="setup-check"><input type="checkbox"> We verified the Day Zero commit on GitHub.</label>
+        <div class="setup-checklist" id="setup-checklist">
+          <label class="setup-check"><input type="checkbox" data-setup-check="repo"> Our team has a private repository.</label>
+          <label class="setup-check"><input type="checkbox" data-setup-check="access"> The captain and backup driver can open it.</label>
+          <label class="setup-check"><input type="checkbox" data-setup-check="preview"> The preview shows a working project.</label>
+          <label class="setup-check"><input type="checkbox" data-setup-check="edit"> We changed one heading and saw the result.</label>
+          <label class="setup-check"><input type="checkbox" data-setup-check="commit"> We verified the Day Zero commit on GitHub.</label>
         </div>
         <p class="status-strip"><strong>Yellow is still participation.</strong> If an invitation or Copilot is unresolved, take a navigator, designer/tester, or documentarian role while your teacher repairs access. A Codespaces or preview failure is the priority to fix before Day 1.</p>
         <div class="setup-actions">
@@ -100,5 +102,18 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        const key = "coding-club:day-zero:setup";
+        const boxes = [...document.querySelectorAll("[data-setup-check]")];
+        try {
+          const saved = new Set(JSON.parse(localStorage.getItem(key) || "[]"));
+          boxes.forEach((box) => { box.checked = saved.has(box.dataset.setupCheck); });
+        } catch { /* setup remains usable when storage is blocked */ }
+        boxes.forEach((box) => box.addEventListener("change", () => {
+          try { localStorage.setItem(key, JSON.stringify(boxes.filter((item) => item.checked).map((item) => item.dataset.setupCheck))); } catch { /* optional */ }
+        }));
+      }());
+    </script>
   </body>
 </html>

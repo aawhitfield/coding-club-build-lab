@@ -45,6 +45,7 @@ for (const file of files.filter((candidate) => candidate.endsWith(".html"))) {
   const html = fs.readFileSync(file, "utf8");
   for (const match of html.matchAll(/(?:href|src)=["']([^"']+)["']/g)) {
     const target = match[1];
+    if (file.endsWith("mission.html") && /^(choice-[ab]\.html|index\.html)$/.test(target)) continue;
     if (/^(https?:|data:|#|mailto:|javascript:)/.test(target)) continue;
     const localTarget = path.resolve(path.dirname(file), target.split("#")[0].split("?")[0]);
     if (!fs.existsSync(localTarget)) errors.push(`HTML reference: ${path.relative(root, file)} -> ${target}`);
@@ -58,41 +59,48 @@ if (!fs.existsSync(path.join(root, "ACCOUNT-PIT-STOP.html"))) {
 if (launcher.includes("ACCOUNT-PIT-STOP.md") || /meetings\/[^\"]+\/START-HERE\.md/.test(launcher)) {
   errors.push("Launcher still sends students directly to raw Markdown");
 }
-if (!launcher.includes("meetings/01-ridiculous-website/mission.html")) {
-  errors.push("Launcher does not link to the Meeting 1 Mission Control page");
-}
-
-const missionFile = "meetings/01-ridiculous-website/mission.html";
-const missionSource = read(missionFile);
-const missionConfigMatch = missionSource.match(/<script id="mission-config" type="application\/json">([\s\S]*?)<\/script>/);
-if (!missionConfigMatch) {
-  errors.push(`${missionFile} is missing its JSON mission configuration`);
-} else {
+const missionFiles = requiredMeetings.map((meeting) => `meetings/${meeting}/mission.html`);
+for (const missionFile of missionFiles) {
+  if (!fs.existsSync(path.join(root, missionFile))) {
+    errors.push(`Missing Mission Control page: ${missionFile}`);
+    continue;
+  }
+  const missionSource = read(missionFile);
+  for (const required of ["mission-config", "learning-targets", "essential-question", "data-progress", "data-prediction-group", "data-track-target", "stuck-card"]) {
+    if (!missionSource.includes(required)) errors.push(`${missionFile} is missing ${required}`);
+  }
+  const missionConfigMatch = missionSource.match(/<script id="mission-config" type="application\/json">([\s\S]*?)<\/script>/);
+  if (!missionConfigMatch) {
+    errors.push(`${missionFile} is missing its JSON mission configuration`);
+    continue;
+  }
   try {
     const config = JSON.parse(missionConfigMatch[1]);
-    if (config.id !== "01-ridiculous-website" || config.mode !== "embedded") {
-      errors.push(`${missionFile} has an unexpected mission id or mode`);
-    }
-    for (const trackName of ["project", "catchUp"]) {
-      const track = config.tracks?.[trackName];
-      if (!track?.preview || !track?.watchPath || !Array.isArray(track.editFiles)) {
-        errors.push(`${missionFile} is missing the ${trackName} track configuration`);
-        continue;
+    const directory = path.dirname(path.join(root, missionFile));
+    if (!config.id || !config.tracks || !Object.keys(config.tracks).length) errors.push(`${missionFile} has no usable mission tracks`);
+    for (const [trackName, track] of Object.entries(config.tracks || {})) {
+      const mode = track.mode || config.mode || "embedded";
+      if (!Array.isArray(track.editFiles) || !track.editFiles.length) errors.push(`${missionFile} is missing edit files for ${trackName}`);
+      const resolveTarget = (target) => target.startsWith("meetings/") ? path.resolve(root, target) : path.resolve(directory, target);
+      for (const target of [...(track.editFiles || []), ...(mode === "embedded" && track.preview ? [track.preview] : [])]) {
+        const targetPath = resolveTarget(target);
+        if (!targetPath.startsWith(root + path.sep) || !fs.existsSync(targetPath)) errors.push(`${missionFile} points to a missing or unsafe target: ${target}`);
       }
-      for (const target of [track.preview, ...track.editFiles]) {
-        const targetPath = path.resolve(path.dirname(path.join(root, missionFile)), target);
-        if (!targetPath.startsWith(root + path.sep) || !fs.existsSync(targetPath)) {
-          errors.push(`${missionFile} points to a missing or unsafe target: ${target}`);
-        }
-      }
-      const watchPath = path.resolve(path.dirname(path.join(root, missionFile)), track.watchPath);
-      if (!watchPath.startsWith(root + path.sep) || !fs.existsSync(watchPath)) {
-        errors.push(`${missionFile} has a missing or unsafe watch path: ${track.watchPath}`);
+      if (mode === "external" && !/^https:\/\//.test(track.externalUrl || config.externalUrl || "")) errors.push(`${missionFile} has no safe external URL for ${trackName}`);
+      if (mode === "embedded" && track.watchPath) {
+        const prefix = track.pathPrefix ?? config.pathPrefix ?? "";
+        const watchPath = path.resolve(root, prefix, track.watchPath);
+        if (!watchPath.startsWith(root + path.sep) || !fs.existsSync(watchPath)) errors.push(`${missionFile} has a missing or unsafe watch path for ${trackName}`);
       }
     }
   } catch (error) {
     errors.push(`${missionFile} contains invalid mission JSON: ${error.message}`);
   }
+}
+
+for (const meeting of requiredMeetings) {
+  const missionLink = `meetings/${meeting}/mission.html`;
+  if (!launcher.includes(missionLink)) errors.push(`Launcher does not link to ${missionLink}`);
 }
 
 for (const track of ["project", "catch-up"]) {
@@ -103,6 +111,13 @@ for (const track of ["project", "catch-up"]) {
     if (!html.includes(marker) && !css.includes(marker)) errors.push(`${track} is missing ${marker}`);
   }
   if (!js.includes("BUILD LAB EDIT 5")) errors.push(`${track}/script.js is missing the optional edit marker`);
+}
+
+for (const file of files.filter((candidate) => /meetings[\\/]0[2367]-/.test(candidate) && /[\\/](project|catch-up)[\\/](index\.html|style\.css|script\.js)$/.test(candidate))) {
+  const source = fs.readFileSync(file, "utf8");
+  if (!source.includes("BUILD LAB EDIT") && !/START-HERE|mission\.html/.test(file)) {
+    errors.push(`${path.relative(root, file)} is missing a beginner edit marker`);
+  }
 }
 
 const devcontainer = read(".devcontainer/devcontainer.json");

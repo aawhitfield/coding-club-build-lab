@@ -1,2 +1,34 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Team Story</title><link rel="stylesheet" href="style.css"></head><body><main class="story-shell"><section class="story-card"><p class="hint">Team project · change the story</p><h1>The Door That Wasn’t There</h1><p>You arrive at school early and find a glowing door where the trophy case should be.</p><p class="hint">What do you do?</p><nav class="choices" aria-label="Story choices"><a class="choice" href="choice-a.html">Open the door</a><a class="choice secondary" href="choice-b.html">Ask the door a question</a></nav></section></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Story</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="story-shell">
+    <section class="story-card">
+      <p class="hint">Team project · change the story</p>
+      <!-- BUILD LAB EDIT 1: change the premise. -->
+      <!-- BUILD LAB EDIT 2: change the opening situation. -->
+      <h1>The Door That Wasn’t There</h1>
+      <p>You arrive at school early and find a glowing door where the trophy case should be.</p>
+      <p class="hint">What do you do?</p>
+      <nav class="choices" aria-label="Story choices">
+        <!-- BUILD LAB EDIT 3: change the visible choice and its href together. -->
+        <a class="choice" href="choice-a.html">Open the door</a> <a class="choice secondary" href="choice-b.html">Ask the door a question</a>
+      </nav>
+      <!-- Meeting 3 setup: remove hidden from this lab when you are ready to add an event. -->
+      <section id="event-lab" hidden>
+        <p id="normal-panel">The story has one more secret.</p>
+        <p id="secret-panel" class="message" hidden>The secret is waiting.</p>
+        <button id="secret-button" type="button">Reveal the secret</button>
+        <button id="reset-button" type="button">Reset</button>
+      </section>
+    </section>
+  </main>
+  <script src="../../../shared/club-kit.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

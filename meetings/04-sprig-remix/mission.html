@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meeting 4 Mission Control: remix a working Sprig game.">
+  <title>Mission 04 · Remix the Rules</title>
+  <link rel="stylesheet" href="../../shared/club-kit.css">
+  <link rel="stylesheet" href="../../shared/mission-control.css">
+</head>
+<body class="mission-body">
+  <header class="mission-topbar">
+    <a class="mission-brand" href="../../index.html">Coding Club · Build Lab</a><a href="../../index.html">Back to mission launcher</a>
+  </header>
+  <main class="mission-shell">
+    <section class="mission-intro" aria-labelledby="mission-title">
+      <div>
+        <p class="mission-kicker">Mission 04 · Design through playtesting</p>
+        <h1 id="mission-title">Remix the Rules</h1>
+        <p class="lede">Open a working game, change its visual world, and make a remix that feels unmistakably yours. You do not need to understand every line before you begin.</p>
+      </div>
+      <div class="mission-contract" aria-label="Meeting promise">
+        <div>
+          <strong>60 min</strong><span>One playable remix</span>
+        </div>
+        <div>
+          <strong>16×16</strong><span>Pixel-art world</span>
+        </div>
+        <div>
+          <strong>1 tester</strong><span>Another player</span>
+        </div>
+      </div>
+    </section>
+    <div class="mission-layout">
+      <section class="guide-column" aria-label="Mission directions">
+        <section class="track-card" aria-labelledby="track-title">
+          <p class="panel-kicker">Choose your entry point</p>
+          <h2 id="track-title">Which starter fits today?</h2>
+          <p>Choose the team backup if you have a saved Sprig game. Choose catch-up if you are new. Both starters run before you change anything.</p>
+          <div class="track-options" role="group" aria-label="Sprig starter">
+            <button class="track-button" type="button" data-track-target="project" aria-pressed="true">Team backup</button><button class="track-button" type="button" data-track-target="catchUp" aria-pressed="false">Catch-up starter</button>
+          </div>
+          <p class="small-note">Sprig opens in another tab. Keep this Mission Control tab beside it.</p>
+          <nav class="mission-jump" aria-label="Jump to a mission step">
+            <a href="#step-play">Play</a><a href="#step-find">Find</a><a href="#step-change">Change</a><a href="#step-test">Test</a><a href="#step-broadcast">Broadcast</a>
+          </nav>
+          <p class="mission-status" data-mission-status="" role="status" aria-live="polite"></p>
+        </section>
+        <div class="learning-targets">
+          <h3>By the end, I can…</h3>
+          <ul>
+            <li>Identify artwork, map data, controls, and the win condition.</li>
+            <li>Make a controlled art and map remix.</li>
+            <li>Explain one rule my team preserved while changing the experience.</li>
+          </ul>
+        </div>
+        <div class="essential-question"><strong>Essential question</strong><p>How can we change a working game without losing the rule that makes it fun?</p></div>
+        <ol class="mission-step-list">
+          <li>
+            <details class="mission-step" id="step-play" open>
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Play before you edit</strong><span>Find the game’s promise.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Open Sprig from the panel. Run the starter and play until you can explain the goal to a teammate.</p>
+                <div class="do-see-grid">
+                  <div class="do-see">
+                    <strong>Do</strong><span>Run the game, try each control, and reach or miss the goal.</span>
+                  </div>
+                  <div class="do-see">
+                    <strong>You should see</strong><span>A playable character, a map, an obstacle or goal, and a response when you win.</span>
+                  </div>
+                </div>
+                <div class="question-card">
+                  <h3>Turn and talk</h3>
+                  <p>What does the player try to accomplish? Which visual clue tells you where to go?</p>
+                </div><label class="mission-check"><input type="checkbox" data-progress="play"> I can state the goal and one control without reading the code.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-find">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Use the code compass</strong><span>Find the part you want to remix.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Open the backup file in the Codespace tab for a map of the code. Sprig’s editor is where you run and save; the repository is where your team keeps a backup.</p>
+                <div class="file-job-grid">
+                  <article class="file-job">
+                    <div class="file-job-heading">
+                      <code>setLegend</code><strong>art</strong>
+                    </div>
+                    <pre><code>[player, bitmap`...`]</code></pre>
+                    <p>Defines how a symbol looks.</p>
+                  </article>
+                  <article class="file-job file-job-css">
+                    <div class="file-job-heading">
+                      <code>setMap</code><strong>world</strong>
+                    </div>
+                    <pre><code>setMap(map`...`)</code></pre>
+                    <p>Places symbols into a level.</p>
+                  </article>
+                  <article class="file-job file-job-js">
+                    <div class="file-job-heading">
+                      <code>onInput</code><strong>control</strong>
+                    </div>
+                    <pre><code>onInput("d", () =&gt; ...)</code></pre>
+                    <p>Responds to a player input.</p>
+                  </article>
+                </div>
+                <div class="prediction-group" data-prediction-group="" data-answer="setMap" data-hint="The clue says places symbols into a level. That is the map function." data-success="Correct. setMap describes the level layout.">
+                  <p>Which function controls where the player and goal are placed?</p>
+                  <div class="prediction-options">
+                    <button class="prediction-choice" type="button" data-prediction-choice="setLegend">setLegend</button><button class="prediction-choice" type="button" data-prediction-choice="setMap">setMap</button><button class="prediction-choice" type="button" data-prediction-choice="onInput">onInput</button>
+                  </div>
+                  <p class="prediction-feedback" data-prediction-feedback="" role="status"></p>
+                </div>
+                <div class="file-tree" data-file-tree="" aria-label="Explorer path">
+                  meetings/04-sprig-remix/starter-code-backup.js
+                </div>
+                <div class="path-row"><code data-edit-path>meetings/04-sprig-remix/starter-code-backup.js</code><button class="copy-button" type="button" data-copy-path="meetings/04-sprig-remix/starter-code-backup.js">Copy path</button></div>
+                <label class="mission-check"><input type="checkbox" data-progress="find"> I can point to art, map, and input code.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-change">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Make the guided remix</strong><span>Run after each small change.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>In Sprig, change one thing, press Run, and compare the result with your prediction.</p>
+                <div class="edit-recipe">
+                  <article class="edit-card">
+                    <h3>EDIT 1 · Player art</h3>
+                    <p>Change one color or pixel in the player bitmap. Keep the same symbol key.</p>
+                    <pre>[player, bitmap`... one pixel changed ...`]</pre>
+                  </article>
+                  <article class="edit-card">
+                    <h3>EDIT 2 · Map tile</h3>
+                    <p>Move the goal or add a wall in the map. Keep a path that a new player can discover.</p>
+                    <pre>setMap(map`wwwww / w p g / wwwww`)</pre>
+                  </article>
+                  <article class="edit-card">
+                    <h3>EDIT 3 · Theme</h3>
+                    <p>Rename the game in your instructions and choose a visual theme for the art.</p>
+                    <pre>Theme: “Museum of Lost Buttons”</pre>
+                  </article>
+                </div>
+                <p class="small-note"><strong>Beginner finish line:</strong> the art and map changed, the game still runs, and the goal is still possible. Behavior changes are optional Builder work.</p><label class="mission-check"><input type="checkbox" data-progress="baseline" data-baseline-required=""> Our art and map are visibly different.</label><label class="mission-check"><input type="checkbox" data-progress="run" data-baseline-required=""> The game still runs and the goal remains reachable.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-test">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Playtest the remix</strong><span>Let another player discover the rules.</span></span>
+              </summary>
+              <div class="step-body">
+                <p data-baseline-state="">Complete the guided baseline first</p>
+                <div class="challenge-grid">
+                  <article class="challenge-card">
+                    <strong>Remix</strong>
+                    <p>Change art, map, theme, and instructions.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Builder</strong>
+                    <p>Add a second level, obstacle, sound, or starting position.</p>
+                  </article>
+                  <article class="challenge-card">
+                    <strong>Boss</strong>
+                    <p>Change a rule and explain how the input handler or win condition works.</p>
+                  </article>
+                </div>
+                <div class="test-card">
+                  <h3>Player test</h3>
+                  <ol>
+                    <li>Give the controls to a player without explaining the map.</li>
+                    <li>Ask what they think the goal is.</li>
+                    <li>Record one thing they understood and one thing to clarify.</li>
+                  </ol>
+                </div><label class="mission-check"><input type="checkbox" data-progress="test"> Another player tested the remix and we made one clarity change.</label>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="mission-step" id="step-broadcast">
+              <summary>
+                <span class="step-number" aria-hidden="true"></span>
+                <span class="step-title"><strong>Save, back up, and explain</strong><span>Keep the experiment recoverable.</span></span>
+              </summary>
+              <div class="step-body">
+                <p>Save in Sprig, copy the final code into the backup file, and commit with <code>Meeting 4: Sprig remix</code>. Sync, verify, and stop the Codespace.</p>
+                <p><strong>Demo sentence:</strong> “We changed ____ so the game feels like ____. We preserved ____ so players can still ____.”</p>
+                <div class="stuck-card">
+                  <h3>Stuck ladder</h3>
+                  <ol>
+                    <li>Run the last working version again.</li>
+                    <li>Compare one changed bitmap or map row with the starter.</li>
+                    <li>Restore the backup file if the editor is damaged.</li>
+                    <li>Ask a teammate, teacher, or optional AI adviser about one specific function.</li>
+                  </ol>
+                </div><label class="mission-check"><input type="checkbox" data-progress="broadcast"> I can explain one visual/data change and one playtest result.</label>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </section>
+      <aside class="preview-dock" aria-label="External Sprig workspace">
+        <section class="preview-panel is-external">
+          <div class="preview-head">
+            <div>
+              <p class="preview-kicker">External workspace</p><strong data-preview-label="">Team backup</strong>
+            </div><span class="preview-status" data-preview-status="" role="status" aria-live="polite">Ready to open Sprig</span>
+          </div>
+          <div class="preview-frame" hidden="">
+            <iframe id="project-preview" title="External Sprig preview" name="project-preview"></iframe>
+          </div>
+          <div class="external-preview" data-external-preview="">
+            <div>
+              <h3>Run the game in Sprig</h3>
+              <p>Open Sprig in a new tab. Copy the selected backup code into the editor, press Run, and save when the team is ready.</p><a class="mission-button primary" data-external-link="" target="_blank" rel="noreferrer" href="https://sprig.hackclub.com/">Open Sprig</a><br>
+              <code data-external-path="">meetings/04-sprig-remix/starter-code-backup.js</code>
+            </div>
+          </div>
+          <div class="preview-controls">
+            <button class="mission-button" type="button" data-reload-preview="">Refresh mission</button>
+          </div>
+          <p class="preview-note"><strong>External-tool rhythm:</strong> Mission Control explains the move; Sprig shows the game.</p>
+        </section>
+        <div class="progress-panel" aria-label="Mission progress">
+          <div class="progress-heading">
+            <strong>Mission progress</strong><span data-progress-label="">0 checkpoints complete</span>
+          </div>
+          <div class="progress-track" aria-hidden="true"></div>
+        </div>
+      </aside>
+    </div>
+    <section class="roles-card" aria-labelledby="roles-title">
+      <p class="panel-kicker">Build together</p>
+      <h2 id="roles-title">Playtesting is a design role.</h2>
+      <p>One person can make the edit while three people notice, predict, and test.</p>
+      <div class="role-grid">
+        <article class="role-card">
+          <strong>Driver</strong>
+          <p>Copies one safe change and runs it.</p>
+        </article>
+        <article class="role-card">
+          <strong>Navigator</strong>
+          <p>Maps symbols, controls, and the goal.</p>
+        </article>
+        <article class="role-card">
+          <strong>Designer / tester</strong>
+          <p>Checks whether the theme and goal read clearly.</p>
+        </article>
+        <article class="role-card">
+          <strong>Documentarian</strong>
+          <p>Backs up the code and records the test.</p>
+        </article>
+      </div>
+    </section>
+    <section class="finish-card" aria-labelledby="finish-title">
+      <p class="panel-kicker">Ready to leave?</p>
+      <h2 id="finish-title">A game someone else can play is the finish line.</h2>
+      <p>Keep the backup code safe; the best remix is the one you can recover.</p><a class="mission-button primary" href="../../index.html">Return to mission launcher</a>
+    </section>
+  </main>
+  <script id="mission-config" type="application/json">
+  {"id":"04-sprig-remix","mode":"external","defaultTrack":"project","externalUrl":"https://sprig.hackclub.com/","tracks":{"project":{"mode":"external","label":"Team backup","externalUrl":"https://sprig.hackclub.com/","externalPath":"meetings/04-sprig-remix/starter-code-backup.js","editFiles":["meetings/04-sprig-remix/starter-code-backup.js"],"status":"Open Sprig, run the backup, and save your remix."},"catchUp":{"mode":"external","label":"Catch-up starter","externalUrl":"https://sprig.hackclub.com/","externalPath":"meetings/04-sprig-remix/catch-up-code.js","editFiles":["meetings/04-sprig-remix/catch-up-code.js"],"status":"Open Sprig, run the catch-up starter, and save your remix."}}}
+  </script>
+  <script src="../../shared/mission-control.js"></script>
+</body>
+</html>

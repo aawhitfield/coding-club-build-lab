@@ -12,9 +12,9 @@ This repository is a browser-first, eight-meeting coding-club sequence for stude
 
 In GitHub Codespaces, the preview server starts on port 8000 during both Codespace creation and restart. If it does not open automatically, use the **Ports** panel and open port 8000 in the browser. The launcher and Mission Control use that same preview.
 
-The launcher at [`index.html`](index.html) opens the rendered Day Zero setup guide and the Meeting 1 Mission Control pilot. Mission Control keeps directions in one tab and the live project preview beside them; the Codespace editor remains the place where students edit code. Later meetings retain printable `START-HERE.md` files while their Mission Control pages are built.
+The launcher at [`index.html`](index.html) opens the rendered Day Zero setup guide and Mission Control for every meeting. Mission Control keeps directions in one tab and the live project preview beside them; the Codespace editor remains the place where students edit code. Meetings 4–5 open Sprig in a separate tab because the external editor cannot be embedded reliably.
 
-The final presentation tools are [`showcase/showcase-card.html`](showcase/showcase-card.html) and [`showcase/demo-checklist.md`](showcase/demo-checklist.md).
+The final presentation tools are the [`Meeting 8 Mission Control`](meetings/08-showcase/mission.html) page and [`showcase/showcase-card.html`](showcase/showcase-card.html).
 
 Complete the [`Account Pit Stop`](ACCOUNT-PIT-STOP.html) with your teacher before creating a team repository. The printable fallback is [`ACCOUNT-PIT-STOP.md`](ACCOUNT-PIT-STOP.md).
 
@@ -31,7 +31,7 @@ Only one person edits a team repository at a time. Students never share password
 ## Repository map
 
 - `shared/` contains the beginner helper library, styles, AI protocol, debugging guide, roles, and recovery steps.
-- `meetings/` contains the eight student-facing kits.
+- `meetings/` contains the eight student-facing kits and rendered Mission Control pages.
 - `showcase/` contains the final presentation materials.
 - `teacher/` is intentionally absent from the public template. Keep solutions, reset copies, and facilitator notes in a separate private teacher repository.
 
@@ -52,4 +52,4 @@ node scripts/validate-build-lab.mjs
 node scripts/test-preview-server.mjs
 ```
 
-The first command checks JavaScript syntax, local HTML references, the Meeting 1 Mission Control configuration, required core files for all eight meetings, and the dimensions of the Sprig starter bitmaps. The second command exercises preview health, version polling, missing-file handling, and traversal rejection. These checks do not replace the managed-Chromebook/Sprig rehearsal in the teacher repository.
+The first command checks JavaScript syntax, local HTML references, Mission Control configurations, required core files for all eight meetings, and the dimensions of the Sprig starter bitmaps. The second command exercises preview health, version polling, missing-file handling, and traversal rejection. These checks do not replace the managed-Chromebook/Sprig rehearsal in the teacher repository.

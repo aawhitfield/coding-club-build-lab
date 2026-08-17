@@ -84,7 +84,14 @@ onInput("w", () => { getFirst(player).y -= 1; });
 onInput("a", () => { getFirst(player).x -= 1; });
 onInput("s", () => { getFirst(player).y += 1; });
 onInput("d", () => { getFirst(player).x += 1; });
+let finished = false;
 afterInput(() => {
-  if (tilesWith(danger, player).length > 0) addText("TRY AGAIN", { y: 4, color: color`3` });
-  if (tilesWith(goal, player).length > 0) addText("YOU WIN!", { y: 4, color: color`6` });
+  if (finished) return;
+  if (tilesWith(danger, player).length > 0) {
+    finished = true;
+    addText("TRY AGAIN", { y: 4, color: color`3` });
+  } else if (tilesWith(goal, player).length > 0) {
+    finished = true;
+    addText("YOU WIN!", { y: 4, color: color`6` });
+  }
 });
