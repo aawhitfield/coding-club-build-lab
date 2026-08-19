@@ -1,6 +1,8 @@
 # Account Pit Stop · Day Zero
 
-Complete this supervised 30-minute setup before Meeting 1. Your teacher will tell you which steps are allowed by district policy. Do not create an account or enter information that your school does not approve.
+Complete this supervised Day Zero setup before Meeting 1. Your teacher will tell you which steps are allowed by district policy. Do not create an account or enter information that your school does not approve.
+
+Before the team repository exists, start with the Day Zero Launch Guide in Google Classroom. This page is the persistent in-Codespace checklist after your team workshop has been created.
 
 ## Before Day Zero
 
@@ -10,10 +12,10 @@ Complete this supervised 30-minute setup before Meeting 1. Your teacher will tel
 
 GitHub Education verification is helpful but is not required for Day 1. Your teacher will provide a no-AI fallback if Copilot is not yet available.
 
-## During the 30-minute pit stop
+## During the Day Zero launch
 
 1. Open the public teacher template: <https://github.com/aawhitfield/coding-club-build-lab>
-2. The team captain creates one private repository from the template.
+2. The team captain uses **Use this template** to create one private team repository. Do not fork, clone, or merge the template.
 3. The captain invites teammates and the teacher as collaborators.
 4. Every teammate accepts the invitation using their own account.
 5. One teammate opens a two-core Codespace and port 8000 preview.
