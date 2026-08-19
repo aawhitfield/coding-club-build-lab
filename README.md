@@ -10,13 +10,15 @@ This repository is a browser-first, eight-meeting coding-club sequence for stude
 
 ## Open the club launcher
 
+Students should enter through the teacher's Google Classroom Day Zero guide. Classroom is the front door that links to this template and explains what to do before a team repository exists.
+
 In GitHub Codespaces, the preview server starts on port 8000 during both Codespace creation and restart. If it does not open automatically, use the **Ports** panel and open port 8000 in the browser. The launcher and Mission Control use that same preview.
 
 The launcher at [`index.html`](index.html) opens the rendered Day Zero setup guide and Mission Control for every meeting. Mission Control keeps directions in one tab and the live project preview beside them; the Codespace editor remains the place where students edit code. Meetings 4–5 open Sprig in a separate tab because the external editor cannot be embedded reliably.
 
 The final presentation tools are the [`Meeting 8 Mission Control`](meetings/08-showcase/mission.html) page and [`showcase/showcase-card.html`](showcase/showcase-card.html).
 
-Complete the [`Account Pit Stop`](ACCOUNT-PIT-STOP.html) with your teacher before creating a team repository. The printable fallback is [`ACCOUNT-PIT-STOP.md`](ACCOUNT-PIT-STOP.md).
+After your team repository has been created from the Classroom Day Zero guide, use the [`Team Workshop Checklist`](ACCOUNT-PIT-STOP.html) inside the Codespace. The printable fallback is [`ACCOUNT-PIT-STOP.md`](ACCOUNT-PIT-STOP.md).
 
 ## Team workflow
 
