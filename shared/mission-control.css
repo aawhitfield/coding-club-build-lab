@@ -209,6 +209,7 @@
 
 .mission-step-list {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 12px;
   margin: 0;
   padding: 0;
@@ -443,11 +444,13 @@
 
 .edit-recipe {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 10px;
   margin: 15px 0;
 }
 
 .edit-card {
+  min-width: 0;
   border: 1px solid #cbd5e1;
   border-radius: 13px;
   background: #fbfdff;
@@ -462,6 +465,46 @@
 .edit-card p { margin: 6px 0 0; color: var(--muted); font-size: .9rem; }
 .edit-card code { color: #263d91; font: .84rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .edit-card pre { margin: 9px 0 0; overflow-x: auto; border-radius: 8px; background: #172033; color: #f8fafc; padding: 11px; font: .8rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+.prompt-bank {
+  margin-top: 15px;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #eff6ff, #fffbeb);
+  padding: 14px;
+}
+
+.prompt-bank .prompt-kicker {
+  margin: 0 0 3px;
+  color: #1d4ed8;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.prompt-bank h4 { margin: 0; font-size: 1rem; }
+.prompt-bank > p:last-of-type { margin-top: 5px; color: #475569; }
+
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.prompt-card {
+  border: 1px solid #dbe4ef;
+  border-left: 4px solid #2563eb;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .88);
+  padding: 10px;
+}
+
+.prompt-card:nth-child(3n + 2) { border-left-color: #f59e0b; }
+.prompt-card:nth-child(3n) { border-left-color: #f97360; }
+.prompt-card strong { display: block; color: #172033; font-size: .84rem; }
+.prompt-card p { margin-top: 3px; color: #475569; font-size: .8rem; line-height: 1.35; }
 
 .mission-check {
   display: flex;
@@ -780,6 +823,7 @@ kbd {
   .step-body { padding-left: 20px; }
   .do-see-grid,
   .challenge-grid,
+  .prompt-grid,
   .role-grid { grid-template-columns: 1fr; }
   .path-row { align-items: stretch; flex-direction: column; }
   .copy-button { align-self: flex-start; }
