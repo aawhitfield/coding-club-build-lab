@@ -608,6 +608,7 @@
 .evidence-strip span { color: var(--muted); font-size: .82rem; line-height: 1.4; }
 
 .mission-step code { color: #263d91; }
+.mission-step pre code { color: inherit; }
 
 .preview-head {
   display: flex;
