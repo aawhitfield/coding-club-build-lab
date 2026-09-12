@@ -1,11 +1,19 @@
-# Meeting 3 Demo Card
+# Meeting 3 Demo Card · The Chaos Button
 
-The user does:
+Machine name and audience:
+
+Our theme and backdrop:
+
+The visitor does:
 
 The event listens to:
 
-The program changes:
+The program chooses from:
 
-The bug we repaired:
+The visible result changes:
+
+The visual clue that matches our theme:
+
+The test that led to our revision:
 
 One thing we could add next:

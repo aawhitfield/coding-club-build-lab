@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220" role="img" aria-label="Abstract indigo control-room backdrop">
+  <rect width="360" height="220" fill="#eef2ff"/>
+  <g fill="none" stroke="#c7d2fe" stroke-width="2" opacity=".9">
+    <path d="M-20 170 C55 90 105 250 185 145 S315 40 385 115"/>
+    <path d="M-10 194 C70 122 108 270 194 162 S310 77 375 137"/>
+    <circle cx="70" cy="55" r="23"/>
+    <circle cx="70" cy="55" r="8"/>
+    <path d="M70 20v70M35 55h70"/>
+  </g>
+  <g fill="#ddd6fe" opacity=".75">
+    <circle cx="278" cy="42" r="4"/><circle cx="296" cy="42" r="4"/><circle cx="314" cy="42" r="4"/>
+    <circle cx="278" cy="60" r="4"/><circle cx="296" cy="60" r="4"/><circle cx="314" cy="60" r="4"/>
+  </g>
+</svg>

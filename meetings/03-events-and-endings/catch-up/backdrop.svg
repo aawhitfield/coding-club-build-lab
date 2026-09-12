@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220" role="img" aria-label="Abstract orange control-room backdrop">
+  <rect width="360" height="220" fill="#fff7ed"/>
+  <g fill="none" stroke="#fed7aa" stroke-width="3" opacity=".9">
+    <path d="M-20 34h100v38h84v-54h102v72h114"/>
+    <path d="M-20 52h100v38h84v-54h102v72h114"/>
+    <circle cx="70" cy="155" r="25"/><circle cx="70" cy="155" r="8"/>
+    <path d="M70 120v70M35 155h70"/>
+  </g>
+  <g fill="#fdba74" opacity=".68">
+    <circle cx="260" cy="152" r="8"/><circle cx="288" cy="152" r="8"/><circle cx="316" cy="152" r="8"/>
+    <circle cx="260" cy="180" r="8"/><circle cx="288" cy="180" r="8"/><circle cx="316" cy="180" r="8"/>
+  </g>
+</svg>

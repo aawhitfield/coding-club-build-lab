@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Decision machine control panel</title>
+  <desc id="desc">An orange control panel with a central button, gauges, and blinking lights.</desc>
+  <rect width="640" height="400" rx="24" fill="#fff7ed"/>
+  <rect x="38" y="38" width="564" height="324" rx="22" fill="#431407"/>
+  <circle cx="150" cy="132" r="58" fill="#fed7aa" stroke="#fff" stroke-width="8"/>
+  <circle cx="150" cy="132" r="25" fill="#ea580c"/>
+  <path d="M285 98h230M285 158h160M285 218h190" stroke="#fdba74" stroke-width="16" stroke-linecap="round"/>
+  <rect x="90" y="260" width="460" height="52" rx="26" fill="#ea580c"/>
+  <circle cx="114" cy="286" r="8" fill="#fed7aa"/><circle cx="526" cy="286" r="8" fill="#fed7aa"/>
+  <path d="M330 300l24-46 24 46m-12-22h-24" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

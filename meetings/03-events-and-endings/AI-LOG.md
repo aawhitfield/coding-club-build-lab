@@ -1,8 +1,10 @@
-# AI Log · Meeting 3
+# AI Log · Meeting 3 · The Chaos Button
 
-No AI used today, or complete this record:
+AI is optional. Complete this record only if your team used it.
 
 What we were trying to change:
+
+What we had already tried:
 
 Prompt summary, without personal information:
 

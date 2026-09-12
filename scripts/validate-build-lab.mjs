@@ -103,6 +103,59 @@ for (const meeting of requiredMeetings) {
   if (!launcher.includes(missionLink)) errors.push(`Launcher does not link to ${missionLink}`);
 }
 
+const meeting03Mission = read("meetings/03-events-and-endings/mission.html");
+if (!meeting03Mission.includes("The Chaos Button")) errors.push("Meeting 3 Mission Control is missing The Chaos Button title");
+for (const phrase of ["25+", "Which file contains the list of possible results?", "What did the tester do or say", "Suspicious Excuse Machine", "I need a fresh start", "pickRandom", "setText"]) {
+  if (!meeting03Mission.includes(phrase)) errors.push(`Meeting 3 Mission Control is missing ${phrase}`);
+}
+const meeting03ConfigMatch = meeting03Mission.match(/<script id="mission-config" type="application\/json">([\s\S]*?)<\/script>/);
+if (meeting03ConfigMatch) {
+  try {
+    const config = JSON.parse(meeting03ConfigMatch[1]);
+    if (config.id !== "03-chaos-button-v1") errors.push("Meeting 3 uses an unexpected mission progress identifier");
+    if (!config.tracks?.project || !config.tracks?.catchUp) errors.push("Meeting 3 must have project and catchUp tracks");
+    for (const [name, track] of Object.entries(config.tracks || {})) {
+      const preview = String(track.preview || "");
+      if (preview.includes("02-branching-story")) errors.push(`Meeting 3 track ${name} still depends on Meeting 2`);
+    }
+  } catch (error) {
+    errors.push(`Meeting 3 mission configuration is invalid: ${error.message}`);
+  }
+}
+for (const track of ["project", "catch-up"]) {
+  const directory = `meetings/03-events-and-endings/${track}`;
+  const html = read(`${directory}/index.html`);
+  const css = read(`${directory}/style.css`);
+  const js = read(`${directory}/script.js`);
+  for (const marker of ["BUILD LAB EDIT 1", "BUILD LAB EDIT 2", "BUILD LAB EDIT 4"]) {
+    if (!html.includes(marker)) errors.push(`${directory}/index.html is missing ${marker}`);
+  }
+  for (const marker of ["BUILD LAB EDIT 5"]) {
+    if (!css.includes(marker)) errors.push(`${directory}/style.css is missing ${marker}`);
+  }
+  if (!html.includes("machine.svg") || !html.includes("alt=")) errors.push(`${directory}/index.html must include a meaningful machine image and alt text`);
+  if (!html.includes("matching CSS background image")) errors.push(`${directory}/index.html must explain the matching background-image edit`);
+  if (!css.includes("background-image") || !css.includes("backdrop.svg")) errors.push(`${directory}/style.css must include the starter background image`);
+  if (!fs.existsSync(path.join(root, directory, "backdrop.svg"))) errors.push(`${directory}/backdrop.svg is missing`);
+  for (const marker of ["BUILD LAB EDIT 6", "BUILD LAB EDIT 7"]) {
+    if (!js.includes(marker)) errors.push(`${directory}/script.js is missing ${marker}`);
+  }
+  if (!js.includes("pickRandom(actions)") || !js.includes("pickRandom(complications)")) errors.push(`${directory}/script.js is missing the two-list generator`);
+}
+
+const meeting03Starter = "meetings/03-events-and-endings/starter";
+const starterHtml = read(`${meeting03Starter}/index.html`);
+const starterCss = read(`${meeting03Starter}/style.css`);
+if (!starterHtml.includes("matching CSS background image") || !starterCss.includes("background-image") || !fs.existsSync(path.join(root, meeting03Starter, "backdrop.svg"))) {
+  errors.push("Meeting 3 starter is missing the matching theme backdrop setup");
+}
+for (const backdrop of [
+  "suspicious-excuse.svg", "cafeteria-fortune.svg", "side-quest.svg", "school-superpower.svg",
+  "club-mascot.svg", "villain-lab.svg", "after-school.svg", "terrible-advice.svg"
+]) {
+  if (!fs.existsSync(path.join(root, "meetings/03-events-and-endings/theme-backdrops", backdrop))) errors.push(`Meeting 3 theme backdrop is missing ${backdrop}`);
+}
+
 for (const track of ["project", "catch-up"]) {
   const html = read(`meetings/01-ridiculous-website/${track}/index.html`);
   const css = read(`meetings/01-ridiculous-website/${track}/style.css`);

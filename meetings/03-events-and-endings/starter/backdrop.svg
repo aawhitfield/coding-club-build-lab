@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220" role="img" aria-label="Abstract violet control-room backdrop">
+  <rect width="360" height="220" fill="#f5f3ff"/>
+  <g fill="none" stroke="#ddd6fe" stroke-width="2" opacity=".9">
+    <path d="M-15 35h92v32h70v-44h96v62h132"/>
+    <path d="M-15 55h92v32h70v-44h96v62h132"/>
+    <circle cx="285" cy="52" r="28"/><circle cx="285" cy="52" r="9"/>
+    <path d="M285 14v76M247 52h76"/>
+  </g>
+  <g fill="#c4b5fd" opacity=".65">
+    <rect x="40" y="154" width="22" height="22" rx="5"/><rect x="72" y="154" width="22" height="22" rx="5"/>
+    <rect x="104" y="154" width="22" height="22" rx="5"/><rect x="136" y="154" width="22" height="22" rx="5"/>
+  </g>
+</svg>

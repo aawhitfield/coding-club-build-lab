@@ -52,7 +52,7 @@ try {
   const missionRoutes = [
     ["01-ridiculous-website", "The Ridiculous Website"],
     ["02-branching-story", "Choose Your Own Disaster"],
-    ["03-events-and-endings", "Trigger the Secret Ending"],
+    ["03-events-and-endings", "The Chaos Button"],
     ["04-sprig-remix", "Remix the Rules"],
     ["05-microgame", "Build a 30-Second Obsession"],
     ["06-school-problem", "Fix One School Annoyance"],
